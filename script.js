@@ -55,6 +55,18 @@ function initNavbar() {
         }
       });
     });
+
+    // Close menu when clicking outside header
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('open') && !header.contains(e.target)) {
+        navLinks.classList.remove('open');
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    });
   }
 
   // Active Link on Scroll (IntersectionObserver)

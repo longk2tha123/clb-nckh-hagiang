@@ -80,20 +80,21 @@ function initNavbar() {
    2. HERO STATS COUNTER ANIMATION
    -------------------------------------------------------------------------- */
 function initStatsCounter() {
-  const statNumbers = document.querySelectorAll('.stat-number');
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
   let animated = false;
 
   const countUp = () => {
     statNumbers.forEach(stat => {
       const target = +stat.getAttribute('data-target');
-      const count = +stat.innerText;
-      const increment = Math.ceil(target / 40);
+      const suffix = stat.getAttribute('data-suffix') || '+';
+      const current = +stat.innerText.replace(/[^0-9]/g, '') || 0;
+      const increment = Math.max(1, Math.ceil(target / 30));
 
-      if (count < target) {
-        stat.innerText = Math.min(count + increment, target);
+      if (current < target) {
+        stat.innerText = Math.min(current + increment, target) + suffix;
         setTimeout(countUp, 35);
       } else {
-        stat.innerText = target + (target >= 100 && target !== 100 ? '+' : target === 100 ? '%' : '+');
+        stat.innerText = target + suffix;
       }
     });
   };
@@ -105,7 +106,7 @@ function initStatsCounter() {
         countUp();
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
   const statsSection = document.querySelector('.hero-stats');
   if (statsSection) {

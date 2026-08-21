@@ -276,6 +276,8 @@ ul, ol {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  max-width: 1400px;
+  padding: 0 24px;
 }
 
 .brand-logo {
@@ -283,6 +285,7 @@ ul, ol {
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  margin-right: clamp(16px, 3vw, 48px);
 }
 
 .brand-logo-img {
@@ -1896,36 +1899,103 @@ textarea.form-control {
   color: var(--danger);
 }
 
-/* Member Admission Pass Card */
-.member-pass {
-  background: linear-gradient(135deg, var(--primary-900), var(--primary-700));
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  color: #ffffff;
-  margin: 20px 0;
-  border: 2px dashed var(--accent-gold);
+/* Dev Feature Notice Modal */
+.dev-modal-card {
+  max-width: 520px;
+  text-align: center;
+  padding: 36px 32px 30px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 50px -12px rgba(11, 37, 69, 0.25);
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(0, 168, 150, 0.18);
+  position: relative;
 }
 
-.pass-header {
+@keyframes modalScaleUp {
+  0% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.dev-modal-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(244, 162, 97, 0.18), rgba(231, 111, 81, 0.15));
+  border: 2px solid rgba(244, 162, 97, 0.4);
+  color: var(--accent-gold-dark);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 12px;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 20px rgba(244, 162, 97, 0.2);
+  animation: wrenchWiggle 2.5s ease-in-out infinite;
+}
+
+@keyframes wrenchWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-12deg); }
+  30% { transform: rotate(12deg); }
+  45% { transform: rotate(-6deg); }
+  60% { transform: rotate(4deg); }
+  75% { transform: rotate(0deg); }
+}
+
+.dev-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  color: var(--primary-900);
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.dev-modal-subtitle {
+  font-size: 1.05rem;
+  color: var(--accent-teal-dark);
+  font-weight: 700;
   margin-bottom: 14px;
 }
 
-.pass-header h4 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--accent-gold);
+.dev-modal-body {
+  color: var(--text-dark);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  margin-bottom: 22px;
 }
 
-.pass-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.dev-modal-notice {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: rgba(19, 64, 116, 0.05);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent-teal);
+  display: flex;
+  align-items: flex-start;
   gap: 10px;
+  text-align: left;
   font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.dev-modal-notice i {
+  color: var(--accent-teal);
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.dev-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Toast notification */

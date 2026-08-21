@@ -41,9 +41,9 @@
             </a>
           </li>
           <li><a href="#about" class="nav-link">Giới thiệu</a></li>
-          <li><a href="#activities" class="nav-link">Hoạt động</a></li>
-          <li><a href="#resources" class="nav-link">Thư viện</a></li>
-          <li><a href="#projects" class="nav-link">Đề tài SV</a></li>
+          <li><a href="javascript:void(0)" class="nav-link dev-trigger" data-feature="Hoạt Động & Sự Kiện CLB">Hoạt động</a></li>
+          <li><a href="javascript:void(0)" class="nav-link dev-trigger" data-feature="Thư Viện Tài Liệu NCKH">Thư viện</a></li>
+          <li><a href="javascript:void(0)" class="nav-link dev-trigger" data-feature="Kho Đề Tài Nghiên Cứu Sinh Viên">Đề tài SV</a></li>
           <li><a href="#faq" class="nav-link">Hỏi đáp</a></li>
           <li><a href="#contact" class="nav-link">Liên hệ</a></li>
         </ul>
@@ -51,9 +51,6 @@
 
       <!-- Action Buttons -->
       <div class="nav-actions">
-        <a href="#join" class="btn btn-primary btn-sm">
-          <i class="fa-solid fa-user-plus"></i> Đăng Ký Gia Nhập
-        </a>
         <button class="nav-toggle" id="navToggle" aria-label="Mở menu điều hướng">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -69,7 +66,7 @@
         <div class="hero-content">
           <div class="hero-tag">
             <i class="fa-solid fa-sparkles"></i> 
-            <span>Cổng Thông Tin Học Thuật & Tuyển Thành Viên 2026</span>
+            <span>Cổng Thông Tin Học Thuật 2026</span>
           </div>
           <h1 class="hero-title">
             Khơi Nguồn Ý Tưởng, <br>
@@ -83,8 +80,8 @@
             <a href="#freshmen" class="btn btn-gold">
               <i class="fa-solid fa-compass"></i> Dành Cho Tân Sinh Viên
             </a>
-            <a href="#join" class="btn btn-secondary">
-              <i class="fa-solid fa-paper-plane"></i> Đăng Ký Thành Viên Mới
+            <a href="#about" class="btn btn-secondary">
+              <i class="fa-solid fa-circle-info"></i> Về CLB & Giá Trị
             </a>
           </div>
 
@@ -440,8 +437,8 @@
               Mô tả kết quả phù hợp với bạn.
             </p>
             <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="#join" class="btn btn-gold btn-sm">
-                <i class="fa-solid fa-user-plus"></i> Đăng Ký Nhóm Này Ngay
+              <a href="#contact" class="btn btn-gold btn-sm">
+                <i class="fa-solid fa-comments"></i> Liên Hệ Nhóm Nghiên Cứu
               </a>
               <button type="button" class="btn btn-outline-white btn-sm" id="btnRetakeQuiz">
                 <i class="fa-solid fa-rotate-right"></i> Làm Lại Trắc Nghiệm
@@ -607,348 +604,7 @@
     </div>
   </section>
 
-  <!-- ==================== 5. ACTIVITIES & EVENTS ==================== -->
-  <section class="section section-muted" id="activities">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">
-          <i class="fa-solid fa-calendar-check"></i> Hoạt Động & Sự Kiện
-        </span>
-        <h2 class="section-title">Nhịp Đập Học Thuật Sôi Động</h2>
-        <p class="section-desc">
-          Các chuỗi sự kiện, buổi chia sẻ chuyên đề và workshop thực hành được tổ chức thường xuyên nhằm nâng cao năng lực cho hội viên.
-        </p>
-      </div>
-
-      <!-- Filter Buttons -->
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-category="all">Tất Cả</button>
-        <button class="filter-btn" data-category="workshop">Workshop Kỹ Năng</button>
-        <button class="filter-btn" data-category="seminar">Seminar Học Thuật</button>
-        <button class="filter-btn" data-category="contest">Cuộc Thi NCKH</button>
-        <button class="filter-btn" data-category="teambuilding">Giao Lưu & Dã Ngoại</button>
-      </div>
-
-      <!-- Events Grid -->
-      <div class="events-grid" id="eventsContainer">
-        <!-- Event Card 1 -->
-        <div class="event-card" data-category="workshop">
-          <div class="event-banner">
-            <span class="event-banner-tag">Workshop</span>
-            <i class="fa-solid fa-laptop-file"></i>
-          </div>
-          <div class="event-body">
-            <div class="event-meta">
-              <span><i class="fa-regular fa-calendar"></i> Thứ Bảy hàng tuần</span>
-              <span><i class="fa-solid fa-location-dot"></i> Hội trường A2</span>
-            </div>
-            <h3 class="event-title">Kỹ Năng Tìm Kiếm Tài Liệu & Trích Dẫn Chuẩn APA</h3>
-            <p class="event-desc">
-              Hướng dẫn sinh viên khai thác các nguồn tài nguyên số uy tín, sử dụng công cụ Mendeley/Zotero để quản lý tài liệu tham khảo tự động.
-            </p>
-            <div class="event-footer">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-teal);">Miễn phí cho tân SV</span>
-              <button class="btn btn-secondary btn-sm btn-event-detail" data-event-id="1">Chi tiết</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event Card 2 -->
-        <div class="event-card" data-category="seminar">
-          <div class="event-banner" style="background: linear-gradient(135deg, #134074, #00a896);">
-            <span class="event-banner-tag">Seminar</span>
-            <i class="fa-solid fa-comments"></i>
-          </div>
-          <div class="event-body">
-            <div class="event-meta">
-              <span><i class="fa-regular fa-calendar"></i> Tháng 9/2026</span>
-              <span><i class="fa-solid fa-location-dot"></i> Phòng Lab CNTT</span>
-            </div>
-            <h3 class="event-title">Ứng Dụng AI & Phân Tích Dữ Liệu Trong Đề Tài Sinh Viên</h3>
-            <p class="event-desc">
-              Khám phá cách sử dụng trí tuệ nhân tạo một cách có đạo đức để hỗ trợ tổng quan tài liệu, xử lý bảng hỏi khảo sát và phân tích định lượng.
-            </p>
-            <div class="event-footer">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-teal);">Diễn giả Thạc sĩ</span>
-              <button class="btn btn-secondary btn-sm btn-event-detail" data-event-id="2">Chi tiết</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event Card 3 -->
-        <div class="event-card" data-category="contest">
-          <div class="event-banner" style="background: linear-gradient(135deg, #0b2545, #f4a261);">
-            <span class="event-banner-tag">Cuộc Thi</span>
-            <i class="fa-solid fa-trophy"></i>
-          </div>
-          <div class="event-body">
-            <div class="event-meta">
-              <span><i class="fa-regular fa-calendar"></i> Hằng Năm</span>
-              <span><i class="fa-solid fa-location-dot"></i> Toàn Phân Hiệu</span>
-            </div>
-            <h3 class="event-title">Ý Tưởng Nghiên Cứu Sáng Tạo Trẻ Hà Giang</h3>
-            <p class="event-desc">
-              Sân chơi học thuật lớn nhất trong năm dành cho toàn thể sinh viên nhằm tìm kiếm các ý tưởng đề tài xuất sắc gắn với sự phát triển địa phương.
-            </p>
-            <div class="event-footer">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-gold-dark);">Tổng giải thưởng 20tr</span>
-              <button class="btn btn-secondary btn-sm btn-event-detail" data-event-id="3">Chi tiết</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event Card 4 -->
-        <div class="event-card" data-category="teambuilding">
-          <div class="event-banner" style="background: linear-gradient(135deg, #028090, #184e77);">
-            <span class="event-banner-tag">Giao Lưu</span>
-            <i class="fa-solid fa-mountain-sun"></i>
-          </div>
-          <div class="event-body">
-            <div class="event-meta">
-              <span><i class="fa-regular fa-calendar"></i> Đầu học kỳ</span>
-              <span><i class="fa-solid fa-location-dot"></i> Ngoại khóa</span>
-            </div>
-            <h3 class="event-title">Chuyến Điền Dã Thực Tế & Teambuilding Gắn Kết</h3>
-            <p class="event-desc">
-              Chuyến đi khảo sát văn hóa – kinh tế tại các làng văn hóa du lịch cộng đồng Hà Giang, kết hợp hoạt động giao lưu kết nối thành viên mới.
-            </p>
-            <div class="event-footer">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-teal);">Dành cho Hội viên</span>
-              <button class="btn btn-secondary btn-sm btn-event-detail" data-event-id="4">Chi tiết</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event Card 5 -->
-        <div class="event-card" data-category="workshop">
-          <div class="event-banner">
-            <span class="event-banner-tag">Workshop</span>
-            <i class="fa-solid fa-file-powerpoint"></i>
-          </div>
-          <div class="event-body">
-            <div class="event-meta">
-              <span><i class="fa-regular fa-calendar"></i> Trước kỳ nghiệm thu</span>
-              <span><i class="fa-solid fa-location-dot"></i> Hội trường B1</span>
-            </div>
-            <h3 class="event-title">Kỹ Năng Thiết Kế Slide Báo Cáo & Thuyết Trình Trước Hội Đồng</h3>
-            <p class="event-desc">
-              Thực hành trình bày súc tích trong 10 phút, mẹo trả lời câu hỏi phản biện của hội đồng chấm điểm để đạt kết quả xuất sắc nhất.
-            </p>
-            <div class="event-footer">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-teal);">Thực hành trực tiếp</span>
-              <button class="btn btn-secondary btn-sm btn-event-detail" data-event-id="5">Chi tiết</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event Card 6 -->
-        <div class="event-card" data-category="seminar">
-          <div class="event-banner" style="background: linear-gradient(135deg, #1d5b96, #028090);">
-            <span class="event-banner-tag">Seminar</span>
-            <i class="fa-solid fa-newspaper"></i>
-          </div>
-          <div class="event-body">
-            <div class="event-meta">
-              <span><i class="fa-regular fa-calendar"></i> Định kỳ quý</span>
-              <span><i class="fa-solid fa-location-dot"></i> Trực tuyến / Trực tiếp</span>
-            </div>
-            <h3 class="event-title">Con Đường Công Bố Bài Báo Khoa Học Trên Tạp Chí & Kỷ Yếu</h3>
-            <p class="event-desc">
-              Chia sẻ kinh nghiệm chuẩn bị bản thảo, quy trình bình duyệt (peer review) và cách chuyển đổi đề tài nghiên cứu thành bài báo hoàn chỉnh.
-            </p>
-            <div class="event-footer">
-              <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-teal);">Học thuật chuyên sâu</span>
-              <button class="btn btn-secondary btn-sm btn-event-detail" data-event-id="6">Chi tiết</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 6. ACADEMIC HUB & RESOURCES ==================== -->
-  <section class="section" id="resources">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">
-          <i class="fa-solid fa-book-open"></i> Thư Viện Tri Thức
-        </span>
-        <h2 class="section-title">Kho Tài Liệu & Biểu Mẫu NCKH Chuẩn</h2>
-        <p class="section-desc">
-          Tất cả các biểu mẫu quy chuẩn của Phân hiệu ĐHTN tại Hà Giang và tài liệu hướng dẫn kỹ năng nghiên cứu được tổng hợp sẵn để bạn tải về miễn phí.
-        </p>
-      </div>
-
-      <!-- Search & Filter Bar -->
-      <div class="search-filter-bar">
-        <div class="search-input-wrap">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="resourceSearchInput" placeholder="Tìm tên biểu mẫu, tài liệu hướng dẫn...">
-        </div>
-
-        <div>
-          <select class="resource-category-select" id="resourceTypeSelect">
-            <option value="all">Tất cả định dạng</option>
-            <option value="template">Mẫu đề cương & Báo cáo</option>
-            <option value="guide">Hướng dẫn phương pháp</option>
-            <option value="slide">Template thuyết trình</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Resources Grid -->
-      <div class="resources-grid" id="resourcesContainer">
-        <!-- Resource 1 -->
-        <div class="resource-card" data-type="template" data-title="Mẫu Đề Cương NCKH Sinh Viên Cấp Phân Hiệu">
-          <span class="resource-type-badge type-template">Mẫu Biểu Mẫu</span>
-          <h3 class="resource-title">Mẫu Đề Cương NCKH Sinh Viên Cấp Phân Hiệu</h3>
-          <p class="resource-desc">Mẫu thuyết minh đề tài NCKH sinh viên chuẩn quy định mới nhất của Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang.</p>
-          <div class="resource-actions">
-            <button class="btn btn-primary btn-sm btn-download-res" data-file="De_Cuong_NCKH_DHTN_HG.docx">
-              <i class="fa-solid fa-download"></i> Tải Mẫu (.DOCX)
-            </button>
-            <button class="btn btn-secondary btn-sm btn-preview-res" data-file="Mẫu Đề Cương NCKH">Xem Trước</button>
-          </div>
-        </div>
-
-        <!-- Resource 2 -->
-        <div class="resource-card" data-type="guide" data-title="Sổ Tay Hướng Dẫn Trích Dẫn APA 7th Edition">
-          <span class="resource-type-badge type-guide">Hướng Dẫn</span>
-          <h3 class="resource-title">Sổ Tay Hướng Dẫn Trích Dẫn APA 7th Edition</h3>
-          <p class="resource-desc">Tài liệu hướng dẫn chi tiết cách trích dẫn nguồn sách, bài báo tạp chí, trang web và quy chuẩn danh mục tài liệu tham khảo.</p>
-          <div class="resource-actions">
-            <button class="btn btn-primary btn-sm btn-download-res" data-file="Huong_Dan_Trich_Dan_APA7.pdf">
-              <i class="fa-solid fa-download"></i> Tải PDF (2.4 MB)
-            </button>
-            <button class="btn btn-secondary btn-sm btn-preview-res" data-file="Hướng Dẫn Trích Dẫn APA">Xem Trước</button>
-          </div>
-        </div>
-
-        <!-- Resource 3 -->
-        <div class="resource-card" data-type="slide" data-title="Template Slide Báo Cáo Nghiệm Thu Đề Tài">
-          <span class="resource-type-badge type-doc">Template Slide</span>
-          <h3 class="resource-title">Template Slide Báo Cáo Nghiệm Thu Đề Tài</h3>
-          <p class="resource-desc">Bộ mẫu slide PowerPoint chuyên nghiệp, đúng tông màu học thuật chuẩn Phân hiệu ĐHTN Hà Giang, cấu trúc 15 slides chuẩn.</p>
-          <div class="resource-actions">
-            <button class="btn btn-primary btn-sm btn-download-res" data-file="Template_Slide_Bao_Cao_NCKH.pptx">
-              <i class="fa-solid fa-download"></i> Tải PPTX (5.1 MB)
-            </button>
-            <button class="btn btn-secondary btn-sm btn-preview-res" data-file="Template Slide PowerPoint">Xem Trước</button>
-          </div>
-        </div>
-
-        <!-- Resource 4 -->
-        <div class="resource-card" data-type="template" data-title="Mẫu Báo Cáo Tổng Kết Đề Tài Nghiên Cứu">
-          <span class="resource-type-badge type-template">Mẫu Biểu Mẫu</span>
-          <h3 class="resource-title">Mẫu Báo Cáo Tổng Kết Đề Tài Nghiên Cứu</h3>
-          <p class="resource-desc">Quy chuẩn định dạng lề, font chữ, phụ lục, bảng biểu và cấu trúc các chương cho báo cáo toàn văn sau khi nghiệm thu.</p>
-          <div class="resource-actions">
-            <button class="btn btn-primary btn-sm btn-download-res" data-file="Mau_Bao_Cao_Tong_Ket.docx">
-              <i class="fa-solid fa-download"></i> Tải Mẫu (.DOCX)
-            </button>
-            <button class="btn btn-secondary btn-sm btn-preview-res" data-file="Mẫu Báo Cáo Tổng Kết">Xem Trước</button>
-          </div>
-        </div>
-
-        <!-- Resource 5 -->
-        <div class="resource-card" data-type="guide" data-title="Cẩm Nang Thiết Kế Bảng Hỏi Khảo Sát & Lấy Mẫu">
-          <span class="resource-type-badge type-guide">Hướng Dẫn</span>
-          <h3 class="resource-title">Cẩm Nang Thiết Kế Bảng Hỏi Khảo Sát & Lấy Mẫu</h3>
-          <p class="resource-desc">Phương pháp thiết kế câu hỏi khảo sát trên Google Forms, kỹ thuật chọn mẫu ngẫu nhiên và cách xử lý dữ liệu thô.</p>
-          <div class="resource-actions">
-            <button class="btn btn-primary btn-sm btn-download-res" data-file="Cam_Nang_Khao_Sat_GoogleForm.pdf">
-              <i class="fa-solid fa-download"></i> Tải PDF (1.8 MB)
-            </button>
-            <button class="btn btn-secondary btn-sm btn-preview-res" data-file="Cẩm Nang Thiết Kế Bảng Hỏi">Xem Trước</button>
-          </div>
-        </div>
-
-        <!-- Resource 6 -->
-        <div class="resource-card" data-type="guide" data-title="Danh Mục Các Nguồn Tra Cứu Tài Liệu Học Thuật Mở">
-          <span class="resource-type-badge type-guide">Hướng Dẫn</span>
-          <h3 class="resource-title">Danh Mục Các Nguồn Tra Cứu Tài Liệu Học Thuật Mở</h3>
-          <p class="resource-desc">Tổng hợp link truy cập các cơ sở dữ liệu khoa học Việt Nam và quốc tế (V-LIR, Google Scholar, ResearchGate, DOAJ...).</p>
-          <div class="resource-actions">
-            <button class="btn btn-primary btn-sm btn-download-res" data-file="Danh_Muc_Nguon_Tai_Lieu_Mo.pdf">
-              <i class="fa-solid fa-download"></i> Tải PDF (1.2 MB)
-            </button>
-            <button class="btn btn-secondary btn-sm btn-preview-res" data-file="Danh Mục Nguồn Tài Liệu Mở">Xem Trước</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 7. FEATURED STUDENT PROJECTS ==================== -->
-  <section class="section section-muted" id="projects">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">
-          <i class="fa-solid fa-flask-vial"></i> Thành Quả Nghiên Cứu
-        </span>
-        <h2 class="section-title">Đề Tài Tiêu Biểu Của Sinh Viên Phân Hiệu</h2>
-        <p class="section-desc">
-          Các công trình nghiên cứu xuất sắc được thực hiện bởi chính các bạn sinh viên, giải quyết trực tiếp những bài toán thực tiễn tại tỉnh Hà Giang.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <span class="project-tag">Du Lịch & Văn Hóa</span>
-          <h3 class="project-title">Giải pháp phát triển du lịch cộng đồng bền vững tại Công viên địa chất toàn cầu Cao nguyên đá Đồng Văn</h3>
-          <p class="project-abstract">
-            Đề tài khảo sát 250 hộ dân và 400 lượt du khách tại 4 huyện vùng cao (Quản Bạ, Yên Minh, Đồng Văn, Mèo Vạc), đề xuất mô hình homestay gắn liền với bảo tồn bản sắc văn hóa dân tộc H'Mông và Lô Lô.
-          </p>
-          <div class="project-authors">
-            <i class="fa-solid fa-users"></i>
-            <span>Nhóm sinh viên Ngành Du lịch & Quản trị – Giải Nhất Cấp Phân Hiệu 2025</span>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <span class="project-tag">Chuyển Đổi Số & Nông Nghiệp</span>
-          <h3 class="project-title">Ứng dụng chuyển đổi số trong quảng bá và tiêu thụ sản phẩm OCOP đặc trưng tỉnh Hà Giang</h3>
-          <p class="project-abstract">
-            Xây dựng giải pháp gắn mã QR truy xuất nguồn gốc và chiến lược tiếp thị đa kênh (TikTok Shop, sàn thương mại điện tử) cho sản phẩm chè Shan tuyết cổ thụ và mật ong bạc hà Mèo Vạc.
-          </p>
-          <div class="project-authors">
-            <i class="fa-solid fa-users"></i>
-            <span>Nhóm sinh viên Ngành CNTT & Kinh tế – Giải Nhì NCKH ĐHTN</span>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <span class="project-tag">Giáo Dục & Ngoại Ngữ</span>
-          <h3 class="project-title">Thực trạng và giải pháp nâng cao hiệu quả tự học tiếng Anh qua ứng dụng AI cho sinh viên vùng cao</h3>
-          <p class="project-abstract">
-            Nghiên cứu ứng dụng các trợ lý ảo AI (ChatGPT, Elsa Speak) trong việc cải thiện kỹ năng phát âm và giao tiếp tiếng Anh tự tin cho sinh viên dân tộc thiểu số tại Phân hiệu.
-          </p>
-          <div class="project-authors">
-            <i class="fa-solid fa-users"></i>
-            <span>Nhóm sinh viên Ngành Sư phạm Tiếng Anh – Đăng kỷ yếu Hội thảo Quốc tế</span>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card">
-          <span class="project-tag">Môi Trường & Sinh Học</span>
-          <h3 class="project-title">Điều tra sự phân bố và đề xuất giải pháp bảo tồn nguồn gen cây dược liệu quý tại Quản Bạ, Hà Giang</h3>
-          <p class="project-abstract">
-            Đề tài thực địa khảo sát quần thể cây đương quy và sâm cát, phối hợp cùng các hợp tác xã dược liệu địa phương để chuyển giao quy trình sơ chế đạt chuẩn GACP-WHO.
-          </p>
-          <div class="project-authors">
-            <i class="fa-solid fa-users"></i>
-            <span>Nhóm sinh viên Nông - Lâm nghiệp – Báo cáo xuất sắc tại Hội nghị Sinh viên NCKH</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 8. FAQ ACCORDION ==================== -->
+  <!-- ==================== 5. FAQ ACCORDION ==================== -->
   <section class="section" id="faq">
     <div class="container">
       <div class="section-header">
@@ -1030,117 +686,14 @@
         <!-- FAQ Item 6 -->
         <div class="faq-item">
           <button class="faq-question">
-            <span>6. Quy trình đăng ký tham gia CLB như thế nào và bao giờ có kết quả?</span>
+            <span>6. Làm thế nào để em liên hệ và tham gia sinh hoạt cùng CLB NCKH?</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </button>
           <div class="faq-answer">
             <p>
-              Quy trình rất đơn giản: Bạn chỉ cần điền thông tin vào <strong>Form Đăng Ký Trực Tuyến</strong> ngay phía dưới trang web. Ban Chủ Nhiệm sẽ liên hệ qua SĐT/Zalo trong vòng 24 - 48h để mời bạn tham gia nhóm Zalo Tân Sinh Viên và gửi vé mời tham dự buổi gặp mặt đầu năm.
+              Bạn có thể nhắn tin trực tiếp qua <strong>Fanpage CLB NCKH</strong>, tham gia nhóm <strong>Zalo Tân Sinh Viên</strong> hoặc ghé thăm văn phòng CLB tại Nhà A (Tầng 2), Phân hiệu ĐHTN tại Hà Giang để được các anh chị hướng dẫn trực tiếp.
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 9. JOIN & ADMISSION FORM ==================== -->
-  <section class="section join-section" id="join">
-    <div class="container">
-      <div class="join-grid">
-        <!-- Intro & Perks -->
-        <div class="join-intro">
-          <span class="section-badge badge-gold" style="background: rgba(244, 162, 97, 0.2); color: #f4a261;">
-            <i class="fa-solid fa-rocket"></i> Tuyển Thành Viên Đợt 1
-          </span>
-          <h2>Gia Nhập Ngôi Nhà Chung HG-SRC Ngay Hôm Nay</h2>
-          <p>
-            Đừng để 4 năm đại học trôi qua một cách êm đềm đơn điệu. Hãy tạo nên dấu ấn riêng của bạn với những công trình nghiên cứu hữu ích và những người bạn cùng chung chí hướng!
-          </p>
-
-          <div class="join-perks">
-            <div class="join-perk-item">
-              <i class="fa-solid fa-shield-check"></i>
-              <span>Cấp Thẻ Hội Viên Dự Bị ngay sau khi gửi form</span>
-            </div>
-            <div class="join-perk-item">
-              <i class="fa-solid fa-shield-check"></i>
-              <span>Tham gia nhóm Zalo hỗ trợ giải đáp 24/7 từ anh chị khóa trên</span>
-            </div>
-            <div class="join-perk-item">
-              <i class="fa-solid fa-shield-check"></i>
-              <span>Nhận trọn bộ cẩm nang & tài liệu NCKH độc quyền</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Registration Form Card -->
-        <div class="form-card">
-          <h3 class="form-title">Đăng Ký Thành Viên CLB NCKH</h3>
-          <p class="form-subtitle">Điền thông tin của bạn để gia nhập đợt tuyển quân mới nhất</p>
-
-          <form id="joinForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="fullName">Họ và Tên <span style="color: var(--danger);">*</span></label>
-                <input type="text" id="fullName" class="form-control" placeholder="Ví dụ: Nguyễn Văn An" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="studentId">Mã Sinh Viên</label>
-                <input type="text" id="studentId" class="form-control" placeholder="Ví dụ: DTH260012">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="faculty">Ngành / Lớp Học <span style="color: var(--danger);">*</span></label>
-                <input type="text" id="faculty" class="form-control" placeholder="Ví dụ: GD Tiểu học K26, CNTT K26..." required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="phone">Số Điện Thoại / Zalo <span style="color: var(--danger);">*</span></label>
-                <input type="tel" id="phone" class="form-control" placeholder="Ví dụ: 0987654321" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email Sinh Viên <span style="color: var(--danger);">*</span></label>
-              <input type="email" id="email" class="form-control" placeholder="Ví dụ: nguyenvanan@gmail.com" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Lĩnh Vực Nghiên Cứu Bạn Quan Tâm Nhất:</label>
-              <div class="interests-tags">
-                <label>
-                  <input type="checkbox" name="interests" value="Công nghệ & Chuyển đổi số" class="tag-checkbox">
-                  <span class="tag-label">CNTT & Số hóa</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="interests" value="Văn hóa & Du lịch Hà Giang" class="tag-checkbox" checked>
-                  <span class="tag-label">Du lịch & Bản sắc Hà Giang</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="interests" value="Kinh tế & Nông sản OCOP" class="tag-checkbox">
-                  <span class="tag-label">Kinh tế & Khởi nghiệp</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="interests" value="Giáo dục & Kỹ năng sống" class="tag-checkbox">
-                  <span class="tag-label">Sư phạm & Giáo dục</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="interests" value="Dược liệu & Môi trường" class="tag-checkbox">
-                  <span class="tag-label">Dược liệu & Môi trường</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="reason">Mục Tiêu Hoặc Câu Hỏi Của Bạn Dành Cho CLB:</label>
-              <textarea id="reason" class="form-control" placeholder="Bạn mong muốn học được gì nhất khi tham gia CLB NCKH?"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 14px;">
-              <i class="fa-solid fa-paper-plane"></i> Gửi Đơn Đăng Ký Gia Nhập
-            </button>
-          </form>
         </div>
       </div>
     </div>
@@ -1256,19 +809,21 @@
             <li><a href="#hero">Trang chủ</a></li>
             <li><a href="#freshmen">Góc Tân Sinh Viên</a></li>
             <li><a href="#about">Về CLB & Giá trị</a></li>
-            <li><a href="#activities">Lịch hoạt động</a></li>
-            <li><a href="#resources">Thư viện biểu mẫu</a></li>
+            <li><a href="javascript:void(0)" class="dev-trigger" data-feature="Lịch Hoạt Động & Sự Kiện">Lịch hoạt động</a></li>
+            <li><a href="javascript:void(0)" class="dev-trigger" data-feature="Thư Viện Biểu Mẫu NCKH">Thư viện biểu mẫu</a></li>
+            <li><a href="#faq">Hỏi đáp thường gặp</a></li>
+            <li><a href="#contact">Liên hệ trực tiếp</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h5>Mảng Đề Tài</h5>
           <ul class="footer-links">
-            <li><a href="#projects">Du lịch & Bản sắc vùng cao</a></li>
-            <li><a href="#projects">Chuyển đổi số & CNTT</a></li>
-            <li><a href="#projects">Kinh tế & Nông sản OCOP</a></li>
-            <li><a href="#projects">Sư phạm & Tâm lý học</a></li>
-            <li><a href="#projects">Dược liệu & Môi trường</a></li>
+            <li><a href="javascript:void(0)" class="dev-trigger" data-feature="Đề tài Du lịch & Bản sắc vùng cao">Du lịch & Bản sắc vùng cao</a></li>
+            <li><a href="javascript:void(0)" class="dev-trigger" data-feature="Đề tài Chuyển đổi số & CNTT">Chuyển đổi số & CNTT</a></li>
+            <li><a href="javascript:void(0)" class="dev-trigger" data-feature="Đề tài Kinh tế & Nông sản OCOP">Kinh tế & Nông sản OCOP</a></li>
+            <li><a href="javascript:void(0)" class="dev-trigger" data-feature="Đề tài Sư phạm & Tâm lý học">Sư phạm & Tâm lý học</a></li>
+            <li><a href="javascript:void(0)" class="dev-trigger" data-feature="Đề tài Dược liệu & Môi trường">Dược liệu & Môi trường</a></li>
           </ul>
         </div>
 
@@ -1297,84 +852,39 @@
     </div>
   </footer>
 
-  <!-- ==================== 12. MODALS & POPUPS ==================== -->
-  
-  <!-- Event Detail Modal -->
-  <div class="modal-overlay" id="eventModal">
-    <div class="modal-card">
-      <button class="modal-close" id="closeEventModal">&times;</button>
-      <div id="eventModalContent">
-        <!-- Injected via script.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Document Preview Modal -->
-  <div class="modal-overlay" id="docModal">
-    <div class="modal-card">
-      <button class="modal-close" id="closeDocModal">&times;</button>
-      <div id="docModalContent">
-        <!-- Injected via script.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Member Admission Pass Modal -->
-  <div class="modal-overlay" id="admissionModal">
-    <div class="modal-card" style="text-align: center;">
-      <button class="modal-close" id="closeAdmissionModal">&times;</button>
+  <!-- ==================== 12. DEVELOPMENT NOTICE MODAL ==================== -->
+  <div class="modal-overlay" id="devModal">
+    <div class="modal-card dev-modal-card">
+      <button class="modal-close" id="closeDevModal" aria-label="Đóng">&times;</button>
       
-      <div style="width: 60px; height: 60px; border-radius: 50%; background: #dcfce7; color: var(--success); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px;">
-        <i class="fa-solid fa-circle-check"></i>
+      <div class="dev-modal-icon-wrap">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
       </div>
       
-      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary-900); margin-bottom: 8px;">
-        Chúc Mừng Bạn Đã Đăng Ký Thành Công!
-      </h3>
-      <p style="font-size: 0.92rem; color: var(--text-muted);">
-        Chào mừng bạn đã gia nhập hàng ngũ Hội Viên Dự Bị của CLB NCKH Phân hiệu ĐHTN tại Hà Giang.
-      </p>
+      <span class="section-badge badge-gold" style="margin-bottom: 12px; display: inline-flex;">
+        <i class="fa-solid fa-sparkles"></i> Hệ Thống Đang Nâng Cấp
+      </span>
 
-      <!-- The Admission Card Preview -->
-      <div class="member-pass" id="memberPassCard">
-        <div class="pass-header">
-          <div>
-            <h4>THẺ HỘI VIÊN DỰ BỊ HG-SRC</h4>
-            <span style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.8);">Phân hiệu Đại học Thái Nguyên tại Hà Giang</span>
-          </div>
-          <i class="fa-solid fa-atom" style="font-size: 1.8rem; color: var(--accent-gold);"></i>
-        </div>
-        <div class="pass-details">
-          <div>
-            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">Họ và Tên:</div>
-            <strong id="passName">Nguyễn Văn An</strong>
-          </div>
-          <div>
-            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">Mã SV / Lớp:</div>
-            <strong id="passFaculty">GD Tiểu học K26</strong>
-          </div>
-          <div>
-            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">Mã Đăng Ký:</div>
-            <strong id="passCode" style="color: var(--accent-gold);">SRC-2026-889</strong>
-          </div>
-          <div>
-            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">Ngày Gia Nhập:</div>
-            <strong id="passDate">21/08/2026</strong>
-          </div>
+      <h3 class="dev-modal-title">Thông Báo</h3>
+      <h4 class="dev-modal-subtitle" id="devFeatureTitle">Tính năng đang được phát triển</h4>
+
+      <div class="dev-modal-body">
+        <p>
+          Chuyên mục này đang được <strong>Ban Học Thuật & Ban Kỹ Thuật</strong> Phân hiệu ĐHTN tại Hà Giang tổng hợp dữ liệu số, cập nhật biểu mẫu và hoàn thiện hệ thống.
+        </p>
+        <div class="dev-modal-notice">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Nếu bạn cần tra cứu tài liệu hoặc tư vấn đề tài sớm nhất, vui lòng liên hệ trực tiếp Ban Chủ Nhiệm qua Zalo/Fanpage.</span>
         </div>
       </div>
 
-      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
-        * Vui lòng chụp màn hình hoặc lưu lại thẻ này khi tham dự buổi sinh hoạt Welcome Day đầu tiên.
-      </p>
-
-      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <button class="btn btn-gold btn-sm" id="btnPrintPass">
-          <i class="fa-solid fa-print"></i> In / Lưu Thẻ
-        </button>
-        <button class="btn btn-secondary btn-sm" id="btnDoneAdmission">
+      <div class="dev-modal-actions">
+        <button class="btn btn-primary" id="btnDevAcknowledge">
           <i class="fa-solid fa-check"></i> Đã Hiểu
         </button>
+        <a href="#contact" class="btn btn-secondary" id="btnDevContact">
+          <i class="fa-solid fa-envelope"></i> Liên Hệ Ban Chủ Nhiệm
+        </a>
       </div>
     </div>
   </div>

@@ -348,7 +348,7 @@ function initWelcomeModal() {
     btnWelcomeExplore.addEventListener('click', (e) => {
       e.preventDefault();
       closeWelcome();
-      const freshmenSection = document.getElementById('freshmen');
+      const freshmenSection = document.getElementById('tansinhvien');
       if (freshmenSection) {
         freshmenSection.scrollIntoView({ behavior: 'smooth' });
       }

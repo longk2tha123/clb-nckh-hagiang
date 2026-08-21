@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuiz();
   initFaqAccordion();
   initDevFeatureModals();
+  initWelcomeModal();
 });
 
 /* --------------------------------------------------------------------------
@@ -309,6 +310,62 @@ function showToast(message, duration = 3000) {
   const toast = document.getElementById('toastMsg');
   const text = document.getElementById('toastText');
   if (!toast || !text) return;
-
 }
+
+/* --------------------------------------------------------------------------
+   8. WELCOME MODAL FOR FRESHMEN K4 & K26
+   -------------------------------------------------------------------------- */
+function initWelcomeModal() {
+  const welcomeModal = document.getElementById('welcomeModal');
+  const closeWelcomeModal = document.getElementById('closeWelcomeModal');
+  const btnWelcomeExplore = document.getElementById('btnWelcomeExplore');
+  const btnWelcomeDismiss = document.getElementById('btnWelcomeDismiss');
+
+  if (!welcomeModal) return;
+
+  const openWelcome = () => {
+    welcomeModal.classList.add('active');
+  };
+
+  const closeWelcome = () => {
+    welcomeModal.classList.remove('active');
+  };
+
+  // Automatically trigger popup on page load
+  setTimeout(() => {
+    openWelcome();
+  }, 600);
+
+  if (closeWelcomeModal) {
+    closeWelcomeModal.addEventListener('click', closeWelcome);
+  }
+
+  if (btnWelcomeDismiss) {
+    btnWelcomeDismiss.addEventListener('click', closeWelcome);
+  }
+
+  if (btnWelcomeExplore) {
+    btnWelcomeExplore.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeWelcome();
+      const freshmenSection = document.getElementById('freshmen');
+      if (freshmenSection) {
+        freshmenSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  welcomeModal.addEventListener('click', (e) => {
+    if (e.target === welcomeModal) {
+      closeWelcome();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && welcomeModal.classList.contains('active')) {
+      closeWelcome();
+    }
+  });
+}
+
 

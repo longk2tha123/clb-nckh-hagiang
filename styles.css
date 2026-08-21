@@ -2043,6 +2043,133 @@ textarea.form-control {
   flex-wrap: wrap;
 }
 
+/* =========================================
+   WELCOME MODAL (FRESHMEN K4 & K26)
+   ========================================= */
+.welcome-modal-card {
+  max-width: 560px;
+  padding: 34px 28px;
+  text-align: center;
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 60px rgba(11, 37, 69, 0.25);
+  border: 1px solid rgba(0, 168, 150, 0.2);
+}
+
+.welcome-header-decoration {
+  margin-bottom: 12px;
+}
+
+.welcome-icon-box {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-900), var(--accent-teal));
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 168, 150, 0.3);
+  animation: pulseIcon 3s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 168, 150, 0.3); }
+  50% { transform: scale(1.06); box-shadow: 0 12px 28px rgba(0, 168, 150, 0.45); }
+}
+
+.welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(244, 162, 97, 0.16), rgba(231, 111, 81, 0.1));
+  color: var(--accent-gold-dark);
+  font-weight: 800;
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+  border: 1px solid rgba(244, 162, 97, 0.35);
+}
+
+.welcome-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3.2vw, 1.55rem);
+  font-weight: 800;
+  color: var(--primary-900);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.welcome-subtitle {
+  font-size: 0.92rem;
+  color: var(--accent-teal-dark);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.welcome-body {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.welcome-lead {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.welcome-subtext {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.welcome-features-list {
+  list-style: none;
+  padding: 14px 16px;
+  margin: 0;
+  background: #f8fafc;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+.welcome-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.welcome-features-list li:last-child {
+  margin-bottom: 0;
+}
+
+.welcome-features-list li i {
+  color: var(--accent-teal);
+  font-size: 0.85rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* Toast notification */
 .toast-msg {
   position: fixed;
@@ -2411,12 +2538,12 @@ html, body {
     gap: 28px;
   }
 
-  .dev-modal-actions {
+  .dev-modal-actions, .welcome-actions {
     flex-direction: column;
     width: 100%;
   }
 
-  .dev-modal-actions .btn {
+  .dev-modal-actions .btn, .welcome-actions .btn {
     width: 100%;
   }
 

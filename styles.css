@@ -130,8 +130,23 @@ ul, ol {
   padding-right: 24px;
 }
 
+/* Single Page Section View / Tab Switching */
+.app-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  min-height: calc(100vh - var(--header-height) - 300px);
+}
+
+.app-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section {
-  padding: 80px 0;
+  padding: 100px 0 80px;
   position: relative;
 }
 
@@ -430,6 +445,10 @@ ul, ol {
               radial-gradient(circle at 10% 80%, rgba(19, 64, 116, 0.06) 0%, transparent 40%),
               var(--bg-main);
   overflow: hidden;
+}
+
+.hero.app-section.active {
+  display: block;
 }
 
 .hero-grid {

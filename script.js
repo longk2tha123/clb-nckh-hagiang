@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initSpaNavigation();
   initStatsCounter();
   initFreshmenTabs();
   initQuiz();
@@ -69,29 +70,82 @@ function initNavbar() {
       }
     });
   }
+}
 
-  // Active Link on Scroll (IntersectionObserver)
-  const sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
-      const sectionId = current.getAttribute('id');
-      const targetLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-      if (targetLink) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          links.forEach(l => l.classList.remove('active'));
-          targetLink.classList.add('active');
+/* --------------------------------------------------------------------------
+   1.1 SPA SECTION SWITCHER (TABS NAVIGATION)
+   -------------------------------------------------------------------------- */
+function initSpaNavigation() {
+  const sections = document.querySelectorAll('.app-section');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const allHashLinks = document.querySelectorAll('a[href^="#"]');
+
+  function showSection(targetId) {
+    const cleanId = (targetId || 'trangchu').replace('#', '');
+    let targetSection = document.getElementById(cleanId);
+    if (!targetSection || !targetSection.classList.contains('app-section')) {
+      targetSection = document.getElementById('trangchu');
+    }
+
+    if (!targetSection) return;
+
+    // Hide all sections
+    sections.forEach(sec => sec.classList.remove('active'));
+
+    // Show target section
+    targetSection.classList.add('active');
+
+    // Update active class on nav links
+    navLinks.forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === `#${targetSection.id}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // If switching to home, re-trigger stat counter if needed
+    if (targetSection.id === 'trangchu') {
+      triggerStatCounter();
+    }
+  }
+
+  // Intercept all hash links across the page (Header, Hero CTA, Footer, Modals)
+  allHashLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl && targetEl.classList.contains('app-section')) {
+          e.preventDefault();
+          history.pushState(null, null, href);
+          showSection(targetId);
         }
       }
     });
   });
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', () => {
+    const hash = window.location.hash || '#trangchu';
+    showSection(hash);
+  });
+
+  // Initial load according to URL hash
+  const initialHash = window.location.hash || '#trangchu';
+  showSection(initialHash);
 }
 
 /* --------------------------------------------------------------------------
    2. HERO STATS COUNTER ANIMATION
    -------------------------------------------------------------------------- */
+let triggerStatCounter = () => {};
+
 function initStatsCounter() {
   const statNumbers = document.querySelectorAll('.stat-number[data-target]');
   let animated = false;
@@ -112,6 +166,16 @@ function initStatsCounter() {
     });
   };
 
+  triggerStatCounter = () => {
+    if (!animated) {
+      animated = true;
+      statNumbers.forEach(stat => {
+        stat.innerText = '0' + (stat.getAttribute('data-suffix') || '+');
+      });
+      setTimeout(countUp, 100);
+    }
+  };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && !animated) {
@@ -119,7 +183,7 @@ function initStatsCounter() {
         countUp();
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.1 });
 
   const statsSection = document.querySelector('.hero-stats');
   if (statsSection) {
@@ -348,10 +412,9 @@ function initWelcomeModal() {
     btnWelcomeExplore.addEventListener('click', (e) => {
       e.preventDefault();
       closeWelcome();
-      const freshmenSection = document.getElementById('tansinhvien');
-      if (freshmenSection) {
-        freshmenSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      const link = document.querySelector('.nav-link[href="#tansinhvien"]') || btnWelcomeExplore;
+      history.pushState(null, null, '#tansinhvien');
+      window.dispatchEvent(new PopStateEvent('popstate'));
     });
   }
 

@@ -47,7 +47,7 @@ WEB CLB NCKH/
 7. **Đề Tài Tiêu Biểu:** Giới thiệu các công trình nghiên cứu xuất sắc của sinh viên gắn với Cao nguyên đá Đồng Văn và kinh tế - xã hội Hà Giang.
 8. **Hỏi Đáp (FAQ):** Accordion giải đáp 6 thắc mắc lớn nhất của tân sinh viên.
 9. **Cổng Đăng Ký Trực Tuyến & Cấp Thẻ Hội Viên:** Form đăng ký tiện lợi, lưu trữ dữ liệu vào trình duyệt và tự động tạo **Thẻ Hội Viên Dự Bị** với mã số riêng có thể in hoặc lưu lại.
-10. **Thông Tin Liên Hệ & Chân Trang:** Trụ sở Phân hiệu ĐHTN tại Hà Giang (Tổ 16, P. Minh Khai), số điện thoại, email và liên kết nhóm Zalo/Fanpage.
+10. **Thông Tin Liên Hệ & Chân Trang:** Trụ sở Phân hiệu ĐHTN tại Hà Giang (Tổ 16, P. Hà Giang 1, Tuyên Quang), hotline Ban Chủ Nhiệm, hotline nộp đơn gia nhập và liên kết nhóm Zalo/Fanpage.
 
 ---
 

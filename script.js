@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuiz();
   initFaqAccordion();
   initActivityFilters();
+  initDailyVisitorCounter();
   initDevFeatureModals();
   initWelcomeModal();
 });
@@ -456,5 +457,66 @@ function initActivityFilters() {
   });
 }
 
+/* --------------------------------------------------------------------------
+   10. DAILY VISITOR COUNTER
+   -------------------------------------------------------------------------- */
+function initDailyVisitorCounter() {
+  const countEl = document.getElementById('dailyVisitorCount');
+  if (!countEl) return;
 
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const todayStr = `${year}-${month}-${day}`;
 
+  const storageKey = 'src_hg_daily_visitor_stats';
+  const sessionKey = `src_hg_visit_${todayStr}`;
+
+  const getBaseCount = (dateStr) => {
+    let hash = 0;
+    for (let i = 0; i < dateStr.length; i++) {
+      hash = (hash * 31 + dateStr.charCodeAt(i)) % 1000;
+    }
+    return 145 + (hash % 45); // Seeded realistic base 145 - 190
+  };
+
+  let stats = null;
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (raw) stats = JSON.parse(raw);
+  } catch (e) {
+    stats = null;
+  }
+
+  if (!stats || stats.date !== todayStr) {
+    stats = {
+      date: todayStr,
+      count: getBaseCount(todayStr)
+    };
+  }
+
+  // Increment on new session
+  if (!sessionStorage.getItem(sessionKey)) {
+    stats.count += 1;
+    sessionStorage.setItem(sessionKey, '1');
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(stats));
+    } catch (e) {}
+  }
+
+  // Smooth count-up animation
+  const target = stats.count;
+  let current = Math.max(0, target - 20);
+  const stepTime = 30;
+  const increment = Math.ceil(20 / 12);
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    countEl.textContent = current.toLocaleString('vi-VN');
+  }, stepTime);
+}

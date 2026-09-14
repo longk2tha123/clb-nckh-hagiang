@@ -426,6 +426,80 @@ ul, ol {
   flex-shrink: 0;
 }
 
+/* Visitor Counter Badge */
+.visitor-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  user-select: none;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.visitor-counter-badge:hover {
+  border-color: var(--accent-teal);
+  box-shadow: 0 3px 8px rgba(0, 168, 150, 0.15);
+  transform: translateY(-1px);
+}
+
+.visitor-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseVisitorGreen 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseVisitorGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.visitor-icon {
+  color: var(--accent-teal);
+  font-size: 0.85rem;
+}
+
+.visitor-label {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.visitor-count {
+  color: var(--primary-900);
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.visitor-unit {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -2991,6 +3065,12 @@ html, body {
     transform: translateY(120px);
   }
 
+  .visitor-counter-badge {
+    padding: 5px 10px;
+    font-size: 0.78rem;
+    gap: 5px;
+  }
+
   /* Recruitment Spotlight Responsiveness (Tablet) */
   .recruitment-bento-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3147,6 +3227,22 @@ html, body {
 
   .timeline-step {
     flex-direction: column;
+  }
+
+  .visitor-counter-badge {
+    padding: 4px 8px;
+    font-size: 0.74rem;
+    gap: 4px;
+  }
+
+  .visitor-unit {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .visitor-label {
+    display: none;
   }
 }
 

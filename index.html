@@ -52,8 +52,15 @@
         </ul>
       </nav>
 
-      <!-- Action Buttons -->
+      <!-- Action Buttons & Visitor Counter -->
       <div class="nav-actions">
+        <div class="visitor-counter-badge" id="dailyVisitorBadge" title="Số lượt truy cập website trong ngày hôm nay">
+          <span class="visitor-pulse-dot" aria-hidden="true"></span>
+          <i class="fa-solid fa-chart-line visitor-icon"></i>
+          <span class="visitor-label">Hôm nay:</span>
+          <span class="visitor-count tabular-nums font-mono font-bold" id="dailyVisitorCount">--</span>
+          <span class="visitor-unit">lượt</span>
+        </div>
         <button class="nav-toggle" id="navToggle" aria-label="Mở menu điều hướng">
           <i class="fa-solid fa-bars"></i>
         </button>

@@ -479,8 +479,19 @@ function initActivityFilters() {
 }
 
 /* --------------------------------------------------------------------------
-   10. DAILY VISITOR COUNTER
+   10. REALTIME FIREBASE VISITOR COUNTER
    -------------------------------------------------------------------------- */
+const firebaseConfig = {
+  apiKey: "AIzaSyBUO3HAKCGZNjwz4zhHJVKAljmwt9DkdOI",
+  authDomain: "clb-nckh---tnu---hgc.firebaseapp.com",
+  databaseURL: "https://clb-nckh---tnu---hgc-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "clb-nckh---tnu---hgc",
+  storageBucket: "clb-nckh---tnu---hgc.firebasestorage.app",
+  messagingSenderId: "380373887219",
+  appId: "1:380373887219:web:e475884da91cde244a6f86",
+  measurementId: "G-DHXZ17FHF6"
+};
+
 function initDailyVisitorCounter() {
   const countEl = document.getElementById('dailyVisitorCount');
   if (!countEl) return;
@@ -490,54 +501,89 @@ function initDailyVisitorCounter() {
   const month = String(now.getMonth() + 1).padStart(2, '0');
   const day = String(now.getDate()).padStart(2, '0');
   const todayStr = `${year}-${month}-${day}`;
-
-  const storageKey = 'src_hg_daily_visitor_stats';
   const sessionKey = `src_hg_visit_${todayStr}`;
 
-  const getBaseCount = (dateStr) => {
-    let hash = 0;
-    for (let i = 0; i < dateStr.length; i++) {
-      hash = (hash * 31 + dateStr.charCodeAt(i)) % 1000;
+  let displayedCount = 0;
+
+  function updateDisplay(target) {
+    if (typeof target !== 'number' || isNaN(target)) return;
+    if (displayedCount === 0) {
+      let current = Math.max(0, target - 10);
+      const stepTime = 25;
+      const increment = Math.max(1, Math.ceil(10 / 8));
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        countEl.textContent = current.toLocaleString('vi-VN');
+      }, stepTime);
+    } else {
+      countEl.textContent = target.toLocaleString('vi-VN');
     }
-    return 145 + (hash % 45); // Seeded realistic base 145 - 190
-  };
-
-  let stats = null;
-  try {
-    const raw = localStorage.getItem(storageKey);
-    if (raw) stats = JSON.parse(raw);
-  } catch (e) {
-    stats = null;
+    displayedCount = target;
   }
 
-  if (!stats || stats.date !== todayStr) {
-    stats = {
-      date: todayStr,
-      count: getBaseCount(todayStr)
-    };
-  }
-
-  // Increment on new session
-  if (!sessionStorage.getItem(sessionKey)) {
-    stats.count += 1;
-    sessionStorage.setItem(sessionKey, '1');
+  // Fallback to local storage if Firebase fails or is offline
+  function runFallback() {
+    const storageKey = 'src_hg_daily_visitor_stats';
+    let stats = null;
     try {
-      localStorage.setItem(storageKey, JSON.stringify(stats));
+      const raw = localStorage.getItem(storageKey);
+      if (raw) stats = JSON.parse(raw);
     } catch (e) {}
+
+    if (!stats || stats.date !== todayStr) {
+      stats = { date: todayStr, count: 1 };
+    }
+
+    if (!sessionStorage.getItem(sessionKey)) {
+      stats.count += 1;
+      sessionStorage.setItem(sessionKey, '1');
+      try { localStorage.setItem(storageKey, JSON.stringify(stats)); } catch (e) {}
+    }
+    updateDisplay(stats.count);
   }
 
-  // Smooth count-up animation
-  const target = stats.count;
-  let current = Math.max(0, target - 20);
-  const stepTime = 30;
-  const increment = Math.ceil(20 / 12);
+  // Connect Firebase Realtime Database
+  if (typeof firebase !== 'undefined') {
+    try {
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
+      const db = firebase.database();
+      const dailyRef = db.ref(`daily_visitors/${todayStr}`);
 
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      current = target;
-      clearInterval(timer);
+      // If user hasn't visited in this browser session today, increment atomically
+      if (!sessionStorage.getItem(sessionKey)) {
+        dailyRef.transaction(current => {
+          return (current || 0) + 1;
+        }, (error, committed) => {
+          if (committed) {
+            sessionStorage.setItem(sessionKey, '1');
+          }
+        });
+      }
+
+      // Realtime listener: triggers whenever anyone accesses the site
+      dailyRef.on('value', snapshot => {
+        const val = snapshot.val();
+        if (val !== null && typeof val === 'number') {
+          updateDisplay(val);
+        } else if (val === null) {
+          updateDisplay(1);
+        }
+      }, err => {
+        console.warn('Firebase Realtime Database listener error:', err);
+        runFallback();
+      });
+
+    } catch (err) {
+      console.warn('Firebase initialization error:', err);
+      runFallback();
     }
-    countEl.textContent = current.toLocaleString('vi-VN');
-  }, stepTime);
+  } else {
+    runFallback();
+  }
 }

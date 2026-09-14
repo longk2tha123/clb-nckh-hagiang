@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFreshmenTabs();
   initQuiz();
   initFaqAccordion();
+  initActivityFilters();
   initDevFeatureModals();
   initWelcomeModal();
 });
@@ -430,5 +431,30 @@ function initWelcomeModal() {
     }
   });
 }
+
+/* --------------------------------------------------------------------------
+   9. ACTIVITIES & EVENTS FILTER
+   -------------------------------------------------------------------------- */
+function initActivityFilters() {
+  const filterBtns = document.querySelectorAll('.activity-filter-btn');
+  const eventCards = document.querySelectorAll('.event-card[data-category]');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-category');
+      eventCards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
 
 

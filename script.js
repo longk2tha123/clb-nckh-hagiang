@@ -83,7 +83,12 @@ function initSpaNavigation() {
   const allHashLinks = document.querySelectorAll('a[href^="#"]');
 
   function showSection(targetId) {
-    const cleanId = (targetId || 'trangchu').replace('#', '');
+    const rawId = (targetId || 'trangchu').replace('#', '');
+    let cleanId = rawId;
+    if (cleanId === 'gioithieu' || cleanId === 've-clb') {
+      cleanId = 'trangchu';
+    }
+
     let targetSection = document.getElementById(cleanId);
     if (!targetSection || !targetSection.classList.contains('app-section')) {
       targetSection = document.getElementById('trangchu');
@@ -107,8 +112,18 @@ function initSpaNavigation() {
       }
     });
 
-    // Scroll to top smoothly
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll handling: if targeted specifically at ve-clb, scroll to that element
+    if (rawId === 've-clb' || rawId === 'gioithieu') {
+      setTimeout(() => {
+        const veClb = document.getElementById('ve-clb');
+        if (veClb) {
+          veClb.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+    } else {
+      // Scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     // If switching to home, re-trigger stat counter if needed
     if (targetSection.id === 'trangchu') {
@@ -122,6 +137,12 @@ function initSpaNavigation() {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#') && href.length > 1) {
         const targetId = href.substring(1);
+        if (targetId === 've-clb' || targetId === 'gioithieu') {
+          e.preventDefault();
+          history.pushState(null, null, href);
+          showSection(targetId);
+          return;
+        }
         const targetEl = document.getElementById(targetId);
         if (targetEl && targetEl.classList.contains('app-section')) {
           e.preventDefault();

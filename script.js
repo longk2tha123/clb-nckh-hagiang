@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDailyVisitorCounter();
   initDevFeatureModals();
   initWelcomeModal();
+  initDocPreviewer();
 });
 
 /* --------------------------------------------------------------------------
@@ -586,4 +587,425 @@ function initDailyVisitorCounter() {
   } else {
     runFallback();
   }
+}
+
+/* --------------------------------------------------------------------------
+   11. DOCUMENT PREVIEWER & ADMINISTRATIVE PAPER VIEWER
+   -------------------------------------------------------------------------- */
+function initDocPreviewer() {
+  const modal = document.getElementById('docPreviewModal');
+  const closeBtn = document.getElementById('closeDocPreviewModal');
+  const modalTitle = document.getElementById('docModalTitle');
+  const modalBadge = document.getElementById('docModalBadge');
+  const modalSub = document.getElementById('docModalSub');
+  const modalBody = document.getElementById('docModalBody');
+  const downloadBtn = document.getElementById('docModalDownloadBtn');
+  const printBtn = document.getElementById('docModalPrintBtn');
+  const previewBtns = document.querySelectorAll('.preview-doc-btn');
+
+  if (!modal || !modalBody) return;
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function openModal() {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  const docsData = {
+    'don-gia-nhap': {
+      title: 'Đơn Xin Gia Nhập CLB Nghiên Cứu Khoa Học (SRC)',
+      badge: '<i class="fa-solid fa-file-word"></i> Biểu Mẫu .DOCX',
+      sub: 'Phân hiệu Đại học Thái Nguyên tại Hà Giang • Năm học 2026 – 2027',
+      downloadUrl: 'MAU_DON_XIN_GIA_NHAP_CLB/MAU_DON_XIN_GIA_NHAP_CLB_SRC_FINAL.docx',
+      downloadName: 'Don_xin_gia_nhap_CLB_SRC.docx',
+      canPrint: true,
+      render: () => `
+        <div class="doc-paper">
+          <div class="doc-paper-header">
+            <div class="doc-header-left">
+              <h5>PHÂN HIỆU ĐHTN TẠI HÀ GIANG</h5>
+              <p>CLB NGHIÊN CỨU KHOA HỌC (SRC)</p>
+              <div class="doc-header-divider"></div>
+            </div>
+            <div class="doc-header-right">
+              <h5>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h5>
+              <p>Độc lập - Tự do - Hạnh phúc</p>
+              <div class="doc-header-divider"></div>
+            </div>
+          </div>
+
+          <div class="doc-main-title">
+            <h2>ĐƠN XIN GIA NHẬP</h2>
+            <p>CÂU LẠC BỘ NGHIÊN CỨU KHOA HỌC - SRC</p>
+          </div>
+
+          <div class="doc-recipient">
+            <strong>Kính gửi:</strong> Ban Chủ nhiệm Câu lạc bộ Nghiên cứu khoa học (SRC) - Phân hiệu ĐHTN tại Hà Giang
+          </div>
+
+          <p style="text-indent: 24px; text-align: justify; margin-bottom: 20px;">
+            Tôi làm đơn này với nguyện vọng được gia nhập Câu lạc bộ Nghiên cứu khoa học (SRC), tham gia các hoạt động học thuật, nghiên cứu khoa học, đổi mới sáng tạo và các chương trình do Câu lạc bộ tổ chức. Tôi xin cung cấp các thông tin sau:
+          </p>
+
+          <h4 class="doc-section-title"><i class="fa-solid fa-user"></i> I. THÔNG TIN CÁ NHÂN</h4>
+          <div class="doc-field-row">
+            <span class="doc-field-label">Họ và tên:</span>
+            <div class="doc-field-line"></div>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">Ngày, tháng, năm sinh:</span>
+            <span style="font-size: 0.9rem; color: #64748b;">....../....../...........</span>
+            <span style="margin-left: 20px; font-weight: 600;">Giới tính:</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Nam</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Nữ</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Khác</span>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">Mã sinh viên:</span>
+            <div class="doc-field-line" style="max-width: 140px;"></div>
+            <span style="margin-left: 16px; font-weight: 600;">Khóa:</span>
+            <div class="doc-field-line" style="max-width: 90px;"></div>
+            <span style="margin-left: 16px; font-weight: 600;">Lớp:</span>
+            <div class="doc-field-line"></div>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">Ngành/Chuyên ngành:</span>
+            <div class="doc-field-line"></div>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">Đơn vị/Khoa/Bộ môn:</span>
+            <div class="doc-field-line"></div>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">Số điện thoại:</span>
+            <div class="doc-field-line" style="max-width: 200px;"></div>
+            <span style="margin-left: 16px; font-weight: 600;">Email:</span>
+            <div class="doc-field-line"></div>
+          </div>
+          <div class="doc-field-row">
+            <span class="doc-field-label">Zalo (nếu có):</span>
+            <div class="doc-field-line"></div>
+          </div>
+
+          <h4 class="doc-section-title"><i class="fa-solid fa-compass"></i> II. LĨNH VỰC QUAN TÂM VÀ NĂNG LỰC CÁ NHÂN</h4>
+          <p style="font-weight: 600; margin: 8px 0 6px;">1. Lĩnh vực nghiên cứu quan tâm (có thể chọn nhiều):</p>
+          <div class="doc-checkbox-group">
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Tự nhiên</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Xã hội Nhân văn</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Giáo dục</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Kĩ thuật</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Môi trường cơ sở</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Khác: ..............................</span>
+          </div>
+
+          <p style="font-weight: 600; margin: 12px 0 6px;">2. Kỹ năng/sở trường hiện có:</p>
+          <div class="doc-checkbox-group">
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Tin học văn phòng</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Thiết kế/Truyền thông</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Thuyết trình</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Xử lý số liệu</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Sử dụng AI</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Tổ chức sự kiện</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Viết học thuật</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Ngoại ngữ</span>
+          </div>
+
+          <p style="font-weight: 600; margin: 12px 0 6px;">3. Kinh nghiệm nghiên cứu khoa học/hoạt động học thuật (nếu có):</p>
+          <div class="doc-field-line" style="margin-bottom: 10px;"></div>
+          <div class="doc-field-line" style="margin-bottom: 10px;"></div>
+
+          <h4 class="doc-section-title"><i class="fa-solid fa-bullseye"></i> III. NGUYỆN VỌNG KHI THAM GIA CLB</h4>
+          <p style="font-weight: 600; margin: 8px 0 6px;">1. Lý do mong muốn gia nhập SRC:</p>
+          <div class="doc-field-line" style="margin-bottom: 10px;"></div>
+          <div class="doc-field-line" style="margin-bottom: 14px;"></div>
+
+          <p style="font-weight: 600; margin: 8px 0 6px;">2. Mong muốn được tham gia/hỗ trợ ở nhóm hoạt động:</p>
+          <div class="doc-checkbox-group">
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Nghiên cứu khoa học & học thuật</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Truyền thông - Thiết kế</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Tổ chức workshop/sự kiện</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> AI - Công nghệ - Dữ liệu</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Khởi nghiệp/Đổi mới sáng tạo</span>
+            <span class="doc-checkbox-item"><span class="doc-box"></span> Chưa xác định, mong được định hướng</span>
+          </div>
+
+          <p style="font-weight: 600; margin: 12px 0 6px;">3. Mục tiêu cá nhân trong 01 năm đầu tham gia CLB:</p>
+          <div class="doc-field-line" style="margin-bottom: 10px;"></div>
+          <div class="doc-field-line" style="margin-bottom: 14px;"></div>
+
+          <h4 class="doc-section-title"><i class="fa-solid fa-scale-balanced"></i> IV. CAM KẾT CỦA NGƯỜI ĐĂNG KÝ</h4>
+          <ol class="doc-list-ol">
+            <li>Tuân thủ Điều lệ/Quy chế hoạt động, nội quy và sự phân công hợp lý của Câu lạc bộ;</li>
+            <li>Tham gia các hoạt động với tinh thần tự nguyện, chủ động, hợp tác và có trách nhiệm;</li>
+            <li>Tôn trọng giảng viên, Ban Chủ nhiệm, thành viên CLB và các cá nhân/đơn vị phối hợp;</li>
+            <li>Bảo đảm trung thực học thuật; trích dẫn nguồn đầy đủ, không đạo văn, không làm sai lệch dữ liệu nghiên cứu;</li>
+            <li>Sử dụng AI và công nghệ một cách có trách nhiệm, có kiểm chứng và phù hợp với yêu cầu học thuật;</li>
+            <li>Không tự ý sử dụng thông tin nội bộ, dữ liệu nghiên cứu hoặc hình ảnh/tài liệu của CLB cho mục đích không phù hợp;</li>
+            <li>Cung cấp thông tin đăng ký trung thực và chịu trách nhiệm về nội dung đã kê khai.</li>
+          </ol>
+
+          <h4 class="doc-section-title"><i class="fa-solid fa-shield-halved"></i> V. ĐỒNG Ý VỀ THÔNG TIN CÁ NHÂN</h4>
+          <p style="font-size: 0.9rem; text-align: justify; color: #475569; margin-bottom: 12px;">
+            Tôi đồng ý để Câu lạc bộ thu thập và sử dụng các thông tin tôi cung cấp trong đơn này nhằm phục vụ quản lý thành viên, liên hệ, tổ chức hoạt động, tổng hợp danh sách và thực hiện các nhiệm vụ liên quan đến hoạt động của CLB theo đúng quy định.
+          </p>
+          <div class="doc-checkbox-item" style="margin-bottom: 24px;">
+            <span class="doc-box"></span>
+            <strong>Tôi đã đọc, hiểu và đồng ý với toàn bộ nội dung trên.</strong>
+          </div>
+
+          <div class="doc-signatures">
+            <div class="doc-signature-block">
+              <h5>XÁC NHẬN TIẾP NHẬN CỦA CLB</h5>
+              <p>Phó Chủ nhiệm CLB<br>(Ký, ghi rõ họ tên)</p>
+              <div class="doc-signer-name">Ma Văn Long</div>
+            </div>
+            <div class="doc-signature-block">
+              <h5>NGƯỜI LÀM ĐƠN</h5>
+              <p>Tuyên Quang, ngày ..... tháng ..... năm 2026<br>(Ký và ghi rõ họ tên)</p>
+              <div class="doc-signer-name" style="font-weight: normal; color: #64748b;">(Ký tên)</div>
+            </div>
+          </div>
+        </div>
+      `
+    },
+
+    'cv-huong-dan': {
+      title: 'Hướng Dẫn Đề Xuất Đề Tài KH&CN Cấp Cơ Sở 2027',
+      badge: '<i class="fa-solid fa-file-pdf"></i> Công Văn .PDF',
+      sub: 'Phân hiệu Đại học Thái Nguyên tại Hà Giang • Văn bản hướng dẫn chính thức',
+      downloadUrl: 'THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf',
+      downloadName: 'CV_HD_DX_de_tai_KHCN_cap_co_so_2027.pdf',
+      canPrint: false,
+      render: () => `
+        <div class="doc-pdf-container">
+          <iframe
+            class="doc-pdf-iframe"
+            src="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf#toolbar=1&navpanes=0"
+            title="Công văn Hướng dẫn Đề xuất đề tài KHCN cấp cơ sở 2027"
+          ></iframe>
+          <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; background: #ffffff; padding: 12px 18px; border-radius: 8px; border: 1px solid #cbd5e1; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 0.88rem; color: #64748b;">
+              <i class="fa-solid fa-circle-info text-teal"></i> Nếu trình duyệt của bạn không hỗ trợ hiển thị PDF trực tiếp, hãy bấm nút bên cạnh:
+            </span>
+            <div style="display: flex; gap: 8px;">
+              <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Trong Tab Mới
+              </a>
+              <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" download="CV_HD_DX_de_tai_KHCN_cap_co_so_2027.pdf" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-download"></i> Tải File PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      `
+    },
+
+    'phu-luc-cv': {
+      title: 'Phụ Lục Mẫu Đề Xuất Nhiệm Vụ KH&CN Cấp Cơ Sở',
+      badge: '<i class="fa-solid fa-file-word"></i> Trọn Bộ Biểu Mẫu .DOCX',
+      sub: 'Hệ thống 12 Mẫu biểu chuẩn phục vụ đề xuất, thuyết minh & nghiệm thu đề tài',
+      downloadUrl: 'THU_VIEN/Ph%E1%BB%A5%20l%E1%BB%A5c%20k%C3%A8m%20CV.docx',
+      downloadName: 'Phu_luc_bieu_mau_kem_CV.docx',
+      canPrint: true,
+      render: () => `
+        <div class="doc-paper">
+          <div class="doc-paper-header">
+            <div class="doc-header-left">
+              <h5>ĐẠI HỌC THÁI NGUYÊN</h5>
+              <p>ĐƠN VỊ: PHÂN HIỆU ĐHTN TẠI HÀ GIANG</p>
+              <div class="doc-header-divider"></div>
+            </div>
+            <div class="doc-header-right">
+              <h5>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h5>
+              <p>Độc lập - Tự do - Hạnh phúc</p>
+              <div class="doc-header-divider"></div>
+            </div>
+          </div>
+
+          <div class="doc-main-title">
+            <span style="font-size: 0.88rem; font-weight: 700; color: var(--accent-gold-dark); text-transform: uppercase; letter-spacing: 0.05em;">Mẫu I (Trọng tâm)</span>
+            <h2>ĐỀ XUẤT NHIỆM VỤ KHOA HỌC VÀ CÔNG NGHỆ</h2>
+            <p>CẤP CƠ SỞ NĂM 2027</p>
+          </div>
+
+          <p style="font-size: 0.9rem; font-style: italic; text-align: right; color: #64748b; margin-bottom: 20px;">
+            ............., ngày ...... tháng ...... năm 202...
+          </p>
+
+          <h4 class="doc-section-title"><i class="fa-solid fa-file-pen"></i> NỘI DUNG ĐỀ XUẤT NHIỆM VỤ</h4>
+          
+          <div style="margin-bottom: 16px;">
+            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">1. Tên đề xuất nhiệm vụ:</p>
+            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
+            <div class="doc-field-line"></div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">2. Tính cấp thiết:</p>
+            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">(Nêu rõ lý do xuất phát từ thực tiễn sản xuất, kinh tế - xã hội hoặc đào tạo tại Phân hiệu/Hà Giang)</p>
+            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
+            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
+            <div class="doc-field-line"></div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">3. Mục tiêu nghiên cứu:</p>
+            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Mục tiêu chung: ............................................................................................................</p>
+            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Mục tiêu cụ thể: ...........................................................................................................</p>
+            <div class="doc-field-line"></div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">4. Nội dung chính & Phương pháp nghiên cứu:</p>
+            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
+            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
+            <div class="doc-field-line"></div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">5. Sản phẩm dự kiến:</p>
+            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Dạng I: Mẫu sản phẩm, mô hình, quy trình công nghệ, phần mềm, thiết bị...</p>
+            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Dạng II: Báo cáo kết quả nghiên cứu, bài báo đăng tạp chí khoa học hoặc kỷ yếu hội nghị...</p>
+            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Dạng III: Đóng góp cho công tác đào tạo, học phần giảng dạy của trường...</p>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">6. Kinh phí thực hiện dự kiến & Thời gian:</p>
+            <p style="font-size: 0.9rem; color: #334155;">- Tổng kinh phí dự kiến: .......................................... triệu đồng.</p>
+            <p style="font-size: 0.9rem; color: #334155;">- Thời gian thực hiện: Từ tháng ....../202...... đến tháng ....../202......</p>
+          </div>
+
+          <h4 class="doc-section-title" style="margin-top: 32px;"><i class="fa-solid fa-list-check"></i> DANH MỤC 12 BIỂU MẪU KÈM THEO TRONG TẬP TIN</h4>
+          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px;">
+            Tập tin Word chứa đầy đủ 12 biểu mẫu chuẩn hóa theo Thông tư 03/2023/TT-BKHCN và quy chế Đại học Thái Nguyên:
+          </p>
+
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th style="width: 15%;">Mẫu số</th>
+                <th>Tên biểu mẫu quy chuẩn</th>
+                <th style="width: 25%;">Đối tượng sử dụng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mẫu I</strong></td>
+                <td>Đề xuất nhiệm vụ KH&CN cấp Cơ sở năm 2027</td>
+                <td>Chủ nhiệm đề tài / Sinh viên</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu II</strong></td>
+                <td>Thuyết minh đề tài KH&CN cấp Cơ sở</td>
+                <td>Nhóm nghiên cứu</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu III</strong></td>
+                <td>Dự toán kinh phí chi tiết (Thông tư 03/2023)</td>
+                <td>Nhóm nghiên cứu</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu IV</strong></td>
+                <td>Báo cáo định kỳ tình hình thực hiện nhiệm vụ</td>
+                <td>Chủ nhiệm đề tài</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu V</strong></td>
+                <td>Báo cáo tổng kết khoa học & kỹ thuật của đề tài</td>
+                <td>Nhóm nghiên cứu</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu VI</strong></td>
+                <td>Bản nhận xét đánh giá hồ sơ nhiệm vụ</td>
+                <td>Chuyên gia phản biện</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu VII</strong></td>
+                <td>Phiếu đánh giá nghiệm thu đề tài cấp Cơ sở</td>
+                <td>Hội đồng nghiệm thu</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu VIII</strong></td>
+                <td>Biên bản họp Hội đồng tư vấn tuyển chọn</td>
+                <td>Thư ký Hội đồng</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu IX</strong></td>
+                <td>Báo cáo quyết toán kinh phí đề tài</td>
+                <td>Bộ phận tài chính / Nhóm</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu X</strong></td>
+                <td>Biên bản kiểm tra tiến độ định kỳ</td>
+                <td>Ban QLKH Phân hiệu</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu XI</strong></td>
+                <td>Đơn đề nghị điều chỉnh nội dung / gia hạn</td>
+                <td>Chủ nhiệm nhiệm vụ</td>
+              </tr>
+              <tr>
+                <td><strong>Mẫu XII</strong></td>
+                <td>Bảng giải trình chỉnh sửa sau góp ý Hội đồng</td>
+                <td>Chủ nhiệm nhiệm vụ</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="background: #e0f2fe; padding: 14px 18px; border-radius: 6px; border: 1px solid #bae6fd; margin-top: 20px;">
+            <strong style="color: #0369a1;"><i class="fa-solid fa-lightbulb"></i> Lưu ý dành cho sinh viên & nhóm nghiên cứu:</strong>
+            <p style="font-size: 0.88rem; color: #0c4a6e; margin: 4px 0 0;">
+              Hãy bấm nút <strong>"Tải Về"</strong> ở góc trên để tải file Word (.DOCX) nguyên bản có thể nhập liệu và in ấn trực tiếp trên máy tính. Ban Chủ Nhiệm SRC luôn sẵn sàng hỗ trợ sửa đề cương và soát mẫu trước khi nộp chính thức.
+            </p>
+          </div>
+        </div>
+      `
+    }
+  };
+
+  previewBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const docKey = btn.getAttribute('data-doc');
+      const doc = docsData[docKey];
+      if (!doc) return;
+
+      modalTitle.textContent = doc.title;
+      modalBadge.innerHTML = doc.badge;
+      modalSub.textContent = doc.sub;
+      downloadBtn.setAttribute('href', doc.downloadUrl);
+      downloadBtn.setAttribute('download', doc.downloadName);
+
+      if (printBtn) {
+        printBtn.style.display = doc.canPrint ? 'inline-flex' : 'none';
+      }
+
+      modalBody.innerHTML = doc.render();
+      openModal();
+    });
+  });
 }

@@ -904,77 +904,79 @@ function initDocPreviewer() {
             Tập tin Word chứa đầy đủ 12 biểu mẫu chuẩn hóa theo Thông tư 03/2023/TT-BKHCN và quy chế Đại học Thái Nguyên:
           </p>
 
-          <table class="doc-table">
-            <thead>
-              <tr>
-                <th style="width: 15%;">Mẫu số</th>
-                <th>Tên biểu mẫu quy chuẩn</th>
-                <th style="width: 25%;">Đối tượng sử dụng</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Mẫu I</strong></td>
-                <td>Đề xuất nhiệm vụ KH&CN cấp Cơ sở năm 2027</td>
-                <td>Chủ nhiệm đề tài / Sinh viên</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu II</strong></td>
-                <td>Thuyết minh đề tài KH&CN cấp Cơ sở</td>
-                <td>Nhóm nghiên cứu</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu III</strong></td>
-                <td>Dự toán kinh phí chi tiết (Thông tư 03/2023)</td>
-                <td>Nhóm nghiên cứu</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu IV</strong></td>
-                <td>Báo cáo định kỳ tình hình thực hiện nhiệm vụ</td>
-                <td>Chủ nhiệm đề tài</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu V</strong></td>
-                <td>Báo cáo tổng kết khoa học & kỹ thuật của đề tài</td>
-                <td>Nhóm nghiên cứu</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu VI</strong></td>
-                <td>Bản nhận xét đánh giá hồ sơ nhiệm vụ</td>
-                <td>Chuyên gia phản biện</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu VII</strong></td>
-                <td>Phiếu đánh giá nghiệm thu đề tài cấp Cơ sở</td>
-                <td>Hội đồng nghiệm thu</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu VIII</strong></td>
-                <td>Biên bản họp Hội đồng tư vấn tuyển chọn</td>
-                <td>Thư ký Hội đồng</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu IX</strong></td>
-                <td>Báo cáo quyết toán kinh phí đề tài</td>
-                <td>Bộ phận tài chính / Nhóm</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu X</strong></td>
-                <td>Biên bản kiểm tra tiến độ định kỳ</td>
-                <td>Ban QLKH Phân hiệu</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu XI</strong></td>
-                <td>Đơn đề nghị điều chỉnh nội dung / gia hạn</td>
-                <td>Chủ nhiệm nhiệm vụ</td>
-              </tr>
-              <tr>
-                <td><strong>Mẫu XII</strong></td>
-                <td>Bảng giải trình chỉnh sửa sau góp ý Hội đồng</td>
-                <td>Chủ nhiệm nhiệm vụ</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="doc-table-wrap">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th style="width: 15%;">Mẫu số</th>
+                  <th>Tên biểu mẫu quy chuẩn</th>
+                  <th style="width: 25%;">Đối tượng sử dụng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Mẫu I</strong></td>
+                  <td>Đề xuất nhiệm vụ KH&CN cấp Cơ sở năm 2027</td>
+                  <td>Chủ nhiệm đề tài / Sinh viên</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu II</strong></td>
+                  <td>Thuyết minh đề tài KH&CN cấp Cơ sở</td>
+                  <td>Nhóm nghiên cứu</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu III</strong></td>
+                  <td>Dự toán kinh phí chi tiết (Thông tư 03/2023)</td>
+                  <td>Nhóm nghiên cứu</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu IV</strong></td>
+                  <td>Báo cáo định kỳ tình hình thực hiện nhiệm vụ</td>
+                  <td>Chủ nhiệm đề tài</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu V</strong></td>
+                  <td>Báo cáo tổng kết khoa học & kỹ thuật của đề tài</td>
+                  <td>Nhóm nghiên cứu</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu VI</strong></td>
+                  <td>Bản nhận xét đánh giá hồ sơ nhiệm vụ</td>
+                  <td>Chuyên gia phản biện</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu VII</strong></td>
+                  <td>Phiếu đánh giá nghiệm thu đề tài cấp Cơ sở</td>
+                  <td>Hội đồng nghiệm thu</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu VIII</strong></td>
+                  <td>Biên bản họp Hội đồng tư vấn tuyển chọn</td>
+                  <td>Thư ký Hội đồng</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu IX</strong></td>
+                  <td>Báo cáo quyết toán kinh phí đề tài</td>
+                  <td>Bộ phận tài chính / Nhóm</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu X</strong></td>
+                  <td>Biên bản kiểm tra tiến độ định kỳ</td>
+                  <td>Ban QLKH Phân hiệu</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu XI</strong></td>
+                  <td>Đơn đề nghị điều chỉnh nội dung / gia hạn</td>
+                  <td>Chủ nhiệm nhiệm vụ</td>
+                </tr>
+                <tr>
+                  <td><strong>Mẫu XII</strong></td>
+                  <td>Bảng giải trình chỉnh sửa sau góp ý Hội đồng</td>
+                  <td>Chủ nhiệm nhiệm vụ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div style="background: #e0f2fe; padding: 14px 18px; border-radius: 6px; border: 1px solid #bae6fd; margin-top: 20px;">
             <strong style="color: #0369a1;"><i class="fa-solid fa-lightbulb"></i> Lưu ý dành cho sinh viên & nhóm nghiên cứu:</strong>

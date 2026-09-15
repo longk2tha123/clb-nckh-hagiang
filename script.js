@@ -989,25 +989,27 @@ function initDocPreviewer() {
     }
   };
 
-  previewBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const docKey = btn.getAttribute('data-doc');
-      const doc = docsData[docKey];
-      if (!doc) return;
+  // Event delegation for preview buttons across the entire page
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.preview-doc-btn');
+    if (!btn) return;
 
-      modalTitle.textContent = doc.title;
-      modalBadge.innerHTML = doc.badge;
-      modalSub.textContent = doc.sub;
-      downloadBtn.setAttribute('href', doc.downloadUrl);
-      downloadBtn.setAttribute('download', doc.downloadName);
+    e.preventDefault();
+    const docKey = btn.getAttribute('data-doc');
+    const doc = docsData[docKey];
+    if (!doc) return;
 
-      if (printBtn) {
-        printBtn.style.display = doc.canPrint ? 'inline-flex' : 'none';
-      }
+    modalTitle.textContent = doc.title;
+    modalBadge.innerHTML = doc.badge;
+    modalSub.textContent = doc.sub;
+    downloadBtn.setAttribute('href', doc.downloadUrl);
+    downloadBtn.setAttribute('download', doc.downloadName);
 
-      modalBody.innerHTML = doc.render();
-      openModal();
-    });
+    if (printBtn) {
+      printBtn.style.display = doc.canPrint ? 'inline-flex' : 'none';
+    }
+
+    modalBody.innerHTML = doc.render();
+    openModal();
   });
 }

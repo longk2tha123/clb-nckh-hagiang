@@ -3517,6 +3517,10 @@ html, body {
 /* --------------------------------------------------------------------------
    15. DOCUMENT PREVIEW MODAL & ADMINISTRATIVE PAPER VIEWER
    -------------------------------------------------------------------------- */
+#docPreviewModal {
+  z-index: 2500;
+}
+
 .doc-preview-modal-card {
   max-width: 980px;
   width: 95%;

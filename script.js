@@ -873,167 +873,13 @@ function initDocPreviewer() {
     },
 
     'phu-luc-cv': {
-      title: 'Phụ Lục Mẫu Đề Xuất Nhiệm Vụ KH&CN Cấp Cơ Sở',
+      title: 'Phụ Lục Mẫu Đề Xuất Nhiệm Vụ KH&CN Cấp Cơ Sở Năm 2027',
       badge: '<i class="fa-solid fa-file-word"></i> Trọn Bộ Biểu Mẫu .DOCX',
-      sub: 'Hệ thống 12 Mẫu biểu chuẩn phục vụ đề xuất, thuyết minh & nghiệm thu đề tài',
+      sub: 'Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang • Ban hành kèm TB số 90/TB-PHHG ngày 09/09/2026',
       downloadUrl: 'THU_VIEN/Ph%E1%BB%A5%20l%E1%BB%A5c%20k%C3%A8m%20CV.docx',
-      downloadName: 'Phu_luc_bieu_mau_kem_CV.docx',
+      downloadName: 'Phu_luc_bieu_mau_kem_CV_2027.docx',
       canPrint: true,
-      render: () => `
-        <div class="doc-paper">
-          <div class="doc-paper-header">
-            <div class="doc-header-left">
-              <h5>ĐẠI HỌC THÁI NGUYÊN</h5>
-              <p>ĐƠN VỊ: PHÂN HIỆU ĐHTN TẠI HÀ GIANG</p>
-              <div class="doc-header-divider"></div>
-            </div>
-            <div class="doc-header-right">
-              <h5>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h5>
-              <p>Độc lập - Tự do - Hạnh phúc</p>
-              <div class="doc-header-divider"></div>
-            </div>
-          </div>
-
-          <div class="doc-main-title">
-            <span style="font-size: 0.88rem; font-weight: 700; color: var(--accent-gold-dark); text-transform: uppercase; letter-spacing: 0.05em;">Mẫu I (Trọng tâm)</span>
-            <h2>ĐỀ XUẤT NHIỆM VỤ KHOA HỌC VÀ CÔNG NGHỆ</h2>
-            <p>CẤP CƠ SỞ NĂM 2027</p>
-          </div>
-
-          <p style="font-size: 0.9rem; font-style: italic; text-align: right; color: #64748b; margin-bottom: 20px;">
-            ............., ngày ...... tháng ...... năm 202...
-          </p>
-
-          <h4 class="doc-section-title"><i class="fa-solid fa-file-pen"></i> NỘI DUNG ĐỀ XUẤT NHIỆM VỤ</h4>
-          
-          <div style="margin-bottom: 16px;">
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">1. Tên đề xuất nhiệm vụ:</p>
-            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
-            <div class="doc-field-line"></div>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">2. Tính cấp thiết:</p>
-            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">(Nêu rõ lý do xuất phát từ thực tiễn sản xuất, kinh tế - xã hội hoặc đào tạo tại Phân hiệu/Hà Giang)</p>
-            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
-            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
-            <div class="doc-field-line"></div>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">3. Mục tiêu nghiên cứu:</p>
-            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Mục tiêu chung: ............................................................................................................</p>
-            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Mục tiêu cụ thể: ...........................................................................................................</p>
-            <div class="doc-field-line"></div>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">4. Nội dung chính & Phương pháp nghiên cứu:</p>
-            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
-            <div class="doc-field-line" style="margin-bottom: 8px;"></div>
-            <div class="doc-field-line"></div>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">5. Sản phẩm dự kiến:</p>
-            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Dạng I: Mẫu sản phẩm, mô hình, quy trình công nghệ, phần mềm, thiết bị...</p>
-            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Dạng II: Báo cáo kết quả nghiên cứu, bài báo đăng tạp chí khoa học hoặc kỷ yếu hội nghị...</p>
-            <p style="font-size: 0.86rem; color: #64748b; margin-bottom: 6px;">- Dạng III: Đóng góp cho công tác đào tạo, học phần giảng dạy của trường...</p>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">6. Kinh phí thực hiện dự kiến & Thời gian:</p>
-            <p style="font-size: 0.9rem; color: #334155;">- Tổng kinh phí dự kiến: .......................................... triệu đồng.</p>
-            <p style="font-size: 0.9rem; color: #334155;">- Thời gian thực hiện: Từ tháng ....../202...... đến tháng ....../202......</p>
-          </div>
-
-          <h4 class="doc-section-title" style="margin-top: 32px;"><i class="fa-solid fa-list-check"></i> DANH MỤC 12 BIỂU MẪU KÈM THEO TRONG TẬP TIN</h4>
-          <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 14px;">
-            Tập tin Word chứa đầy đủ 12 biểu mẫu chuẩn hóa theo Thông tư 03/2023/TT-BKHCN và quy chế Đại học Thái Nguyên:
-          </p>
-
-          <div class="doc-table-wrap">
-            <table class="doc-table">
-              <thead>
-                <tr>
-                  <th style="width: 15%;">Mẫu số</th>
-                  <th>Tên biểu mẫu quy chuẩn</th>
-                  <th style="width: 25%;">Đối tượng sử dụng</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Mẫu I</strong></td>
-                  <td>Đề xuất nhiệm vụ KH&CN cấp Cơ sở năm 2027</td>
-                  <td>Chủ nhiệm đề tài / Sinh viên</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu II</strong></td>
-                  <td>Thuyết minh đề tài KH&CN cấp Cơ sở</td>
-                  <td>Nhóm nghiên cứu</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu III</strong></td>
-                  <td>Dự toán kinh phí chi tiết (Thông tư 03/2023)</td>
-                  <td>Nhóm nghiên cứu</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu IV</strong></td>
-                  <td>Báo cáo định kỳ tình hình thực hiện nhiệm vụ</td>
-                  <td>Chủ nhiệm đề tài</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu V</strong></td>
-                  <td>Báo cáo tổng kết khoa học & kỹ thuật của đề tài</td>
-                  <td>Nhóm nghiên cứu</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu VI</strong></td>
-                  <td>Bản nhận xét đánh giá hồ sơ nhiệm vụ</td>
-                  <td>Chuyên gia phản biện</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu VII</strong></td>
-                  <td>Phiếu đánh giá nghiệm thu đề tài cấp Cơ sở</td>
-                  <td>Hội đồng nghiệm thu</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu VIII</strong></td>
-                  <td>Biên bản họp Hội đồng tư vấn tuyển chọn</td>
-                  <td>Thư ký Hội đồng</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu IX</strong></td>
-                  <td>Báo cáo quyết toán kinh phí đề tài</td>
-                  <td>Bộ phận tài chính / Nhóm</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu X</strong></td>
-                  <td>Biên bản kiểm tra tiến độ định kỳ</td>
-                  <td>Ban QLKH Phân hiệu</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu XI</strong></td>
-                  <td>Đơn đề nghị điều chỉnh nội dung / gia hạn</td>
-                  <td>Chủ nhiệm nhiệm vụ</td>
-                </tr>
-                <tr>
-                  <td><strong>Mẫu XII</strong></td>
-                  <td>Bảng giải trình chỉnh sửa sau góp ý Hội đồng</td>
-                  <td>Chủ nhiệm nhiệm vụ</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div style="background: #e0f2fe; padding: 14px 18px; border-radius: 6px; border: 1px solid #bae6fd; margin-top: 20px;">
-            <strong style="color: #0369a1;"><i class="fa-solid fa-lightbulb"></i> Lưu ý dành cho sinh viên & nhóm nghiên cứu:</strong>
-            <p style="font-size: 0.88rem; color: #0c4a6e; margin: 4px 0 0;">
-              Hãy bấm nút <strong>"Tải Về"</strong> ở góc trên để tải file Word (.DOCX) nguyên bản có thể nhập liệu và in ấn trực tiếp trên máy tính. Ban Chủ Nhiệm SRC luôn sẵn sàng hỗ trợ sửa đề cương và soát mẫu trước khi nộp chính thức.
-            </p>
-          </div>
-        </div>
-      `
+      isDocx: true
     },
     'danh-sach-trung-tuyen': {
       title: 'Danh Sách Trúng Tuyển Thành Viên CLB SRC Năm Học 2026 – 2027',
@@ -1208,8 +1054,82 @@ function initDocPreviewer() {
       printBtn.style.display = doc.canPrint ? 'inline-flex' : 'none';
     }
 
-    modalBody.innerHTML = doc.render();
-    openModal();
+    if (doc.isDocx) {
+      modalBody.innerHTML = `
+        <div class="docx-viewer-wrapper">
+          <div class="docx-preview-notice">
+            <span style="font-size: 0.88rem; color: #334155; display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-file-word" style="color: #2563eb; font-size: 1.15rem;"></i>
+              <span>Đang hiển thị bản Word nguyên mẫu: <strong>Phụ lục kèm CV.docx</strong> (12 Mẫu biểu chuẩn đề xuất năm 2027)</span>
+            </span>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="${doc.downloadUrl}" download="${doc.downloadName}" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-download"></i> Tải File Word Gốc (.DOCX)
+              </a>
+            </div>
+          </div>
+          <div class="docx-preview-loading" id="docxLoading">
+            <i class="fa-solid fa-spinner fa-spin text-teal" style="font-size: 2.2rem; margin-bottom: 14px;"></i>
+            <h4 style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Đang tải và kết xuất bản Word gốc...</h4>
+            <p style="font-size: 0.88rem; color: #64748b; margin: 0; max-width: 480px;">Hệ thống đang kết xuất toàn bộ 12 biểu mẫu với đầy đủ bảng biểu, định dạng và căn lề như trong Microsoft Word.</p>
+          </div>
+          <div id="docxContainer" class="docx-viewer-container" style="display: none;"></div>
+        </div>
+      `;
+      openModal();
+
+      fetch(doc.downloadUrl)
+        .then(res => {
+          if (!res.ok) throw new Error('Không thể tải tệp: ' + res.statusText);
+          return res.arrayBuffer();
+        })
+        .then(buffer => {
+          const loadingEl = document.getElementById('docxLoading');
+          const container = document.getElementById('docxContainer');
+          if (container && window.docx) {
+            window.docx.renderAsync(buffer, container, null, {
+              className: 'docx',
+              inWrapper: true,
+              ignoreWidth: false,
+              ignoreHeight: false
+            }).then(() => {
+              if (loadingEl) loadingEl.style.display = 'none';
+              container.style.display = 'block';
+            }).catch(err => {
+              console.error('Docx render error:', err);
+              if (loadingEl) {
+                loadingEl.innerHTML = `
+                  <i class="fa-solid fa-triangle-exclamation" style="font-size: 2rem; color: #e11d48; margin-bottom: 12px;"></i>
+                  <h4 style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Lỗi khi kết xuất văn bản Word</h4>
+                  <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 16px;">${err.message || 'Không thể hiển thị định dạng'}</p>
+                  <a href="${doc.downloadUrl}" download="${doc.downloadName}" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-download"></i> Tải Về Mở Bằng Microsoft Word
+                  </a>
+                `;
+              }
+            });
+          } else {
+            throw new Error('Thư viện hiển thị docx chưa sẵn sàng.');
+          }
+        })
+        .catch(err => {
+          console.error('Docx fetch error:', err);
+          const loadingEl = document.getElementById('docxLoading');
+          if (loadingEl) {
+            loadingEl.innerHTML = `
+              <i class="fa-solid fa-circle-exclamation" style="font-size: 2rem; color: #e11d48; margin-bottom: 12px;"></i>
+              <h4 style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Không thể tải tệp tài liệu</h4>
+              <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 16px;">Vui lòng kiểm tra kết nối mạng hoặc tải tệp trực tiếp về máy.</p>
+              <a href="${doc.downloadUrl}" download="${doc.downloadName}" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-download"></i> Tải File Word Gốc (.DOCX)
+              </a>
+            `;
+          }
+        });
+    } else {
+      modalBody.innerHTML = doc.render();
+      openModal();
+    }
   });
 }
 

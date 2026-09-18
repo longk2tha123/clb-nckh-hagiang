@@ -795,37 +795,29 @@ function initDocPreviewer() {
     },
 
     'cv-huong-dan': {
-      title: 'Hướng Dẫn Đề Xuất Đề Tài KH&CN Cấp Cơ Sở 2027',
+      title: 'Công Văn Hướng Dẫn Đề Xuất Nhiệm Vụ KH&CN Cấp Cơ Sở 2027',
       badge: '<i class="fa-solid fa-file-pdf"></i> Công Văn .PDF',
-      sub: 'Phân hiệu Đại học Thái Nguyên tại Hà Giang • Văn bản hướng dẫn chính thức',
+      sub: 'Đại học Thái Nguyên • Công văn số 5767/ĐHTN-KHCN&ĐN ngày 08/09/2026',
       downloadUrl: 'THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf',
       downloadName: 'CV_HD_DX_de_tai_KHCN_cap_co_so_2027.pdf',
-      canPrint: false,
+      canPrint: true,
       render: () => `
-        <div class="doc-pdf-container">
-          <object
-            data="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf"
-            type="application/pdf"
-            class="doc-pdf-iframe"
-          >
-            <iframe
-              class="doc-pdf-iframe"
-              src="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf#toolbar=1&navpanes=0"
-              title="Công văn Hướng dẫn Đề xuất đề tài KHCN cấp cơ sở 2027"
-            >
-              <p>Trình duyệt không hỗ trợ hiển thị trực tiếp. <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" target="_blank" rel="noopener">Mở xem PDF trong tab mới</a>.</p>
-            </iframe>
-          </object>
-          <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; background: #ffffff; padding: 12px 18px; border-radius: 8px; border: 1px solid #cbd5e1; flex-wrap: wrap; gap: 10px;">
-            <span style="font-size: 0.88rem; color: #64748b;">
-              <i class="fa-solid fa-circle-info text-teal"></i> Nếu trình duyệt của bạn không hỗ trợ hiển thị PDF trực tiếp, hãy bấm nút bên cạnh:
+        <div class="doc-pdf-viewer">
+          <div class="doc-pdf-pages">
+            <img src="THU_VIEN/preview_cvhd/page_1.webp" alt="Công văn hướng dẫn trang 1" class="doc-page-image">
+            <img src="THU_VIEN/preview_cvhd/page_2.webp" alt="Công văn hướng dẫn trang 2" class="doc-page-image" loading="lazy">
+            <img src="THU_VIEN/preview_cvhd/page_3.webp" alt="Công văn hướng dẫn trang 3" class="doc-page-image" loading="lazy">
+          </div>
+          <div class="doc-pdf-bottom-bar">
+            <span style="font-size: 0.88rem; color: #334155;">
+              <i class="fa-solid fa-circle-check text-teal"></i> Hiển thị đầy đủ <strong>03 trang</strong> Công văn số 5767/ĐHTN-KHCN&ĐN
             </span>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <div class="doc-pdf-actions">
               <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Trong Tab Mới
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở File Gốc
               </a>
               <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" download="CV_HD_DX_de_tai_KHCN_cap_co_so_2027.pdf" class="btn btn-primary btn-sm">
-                <i class="fa-solid fa-download"></i> Tải File PDF
+                <i class="fa-solid fa-download"></i> Tải File PDF Gốc
               </a>
             </div>
           </div>
@@ -836,32 +828,25 @@ function initDocPreviewer() {
     'tb90-khcn-2027': {
       title: 'THÔNG BÁO: V/v đề xuất và tuyển chọn nhiệm vụ KH&CN cấp cơ sở năm 2027',
       badge: '<i class="fa-solid fa-file-pdf"></i> Thông Báo Số 90 .PDF',
-      sub: 'Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang • Kế hoạch đề xuất & tuyển chọn',
+      sub: 'Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang • Thông báo số 90/TB-PHHG ngày 09/09/2026',
       downloadUrl: 'THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf',
       downloadName: 'TB90. đx KHCN cơ sở 2027-DTG.pdf',
-      canPrint: false,
+      canPrint: true,
       render: () => `
-        <div class="doc-pdf-container">
-          <object
-            data="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf"
-            type="application/pdf"
-            class="doc-pdf-iframe"
-          >
-            <iframe
-              class="doc-pdf-iframe"
-              src="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf#toolbar=1&navpanes=0"
-              title="THÔNG BÁO V/v đề xuất và tuyển chọn nhiệm vụ khoa học và công nghệ cấp cơ sở năm 2027"
-            >
-              <p>Trình duyệt không hỗ trợ xem trực tiếp trong khung. <a href="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf" target="_blank" rel="noopener">Bấm vào đây để mở toàn màn hình PDF gốc</a>.</p>
-            </iframe>
-          </object>
-          <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; background: #ffffff; padding: 12px 18px; border-radius: 8px; border: 1px solid #cbd5e1; flex-wrap: wrap; gap: 10px;">
-            <span style="font-size: 0.88rem; color: #64748b;">
-              <i class="fa-solid fa-circle-info text-teal"></i> Đang hiển thị tệp PDF gốc: <strong>TB90. đx KHCN cơ sở 2027-DTG.pdf</strong>
+        <div class="doc-pdf-viewer">
+          <div class="doc-pdf-pages">
+            <img src="THU_VIEN/preview_tb90/page_1.webp" alt="Thông báo số 90 trang 1" class="doc-page-image">
+            <img src="THU_VIEN/preview_tb90/page_2.webp" alt="Thông báo số 90 trang 2" class="doc-page-image" loading="lazy">
+            <img src="THU_VIEN/preview_tb90/page_3.webp" alt="Thông báo số 90 trang 3" class="doc-page-image" loading="lazy">
+            <img src="THU_VIEN/preview_tb90/page_4.webp" alt="Thông báo số 90 trang 4" class="doc-page-image" loading="lazy">
+          </div>
+          <div class="doc-pdf-bottom-bar">
+            <span style="font-size: 0.88rem; color: #334155;">
+              <i class="fa-solid fa-circle-check text-teal"></i> Hiển thị đầy đủ <strong>04 trang</strong> Thông báo số 90/TB-PHHG (Đã ký số)
             </span>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <div class="doc-pdf-actions">
               <a href="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Trong Tab Mới
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở File Gốc
               </a>
               <a href="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf" download="TB90. đx KHCN cơ sở 2027-DTG.pdf" class="btn btn-primary btn-sm">
                 <i class="fa-solid fa-download"></i> Tải File PDF Gốc

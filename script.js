@@ -803,21 +803,68 @@ function initDocPreviewer() {
       canPrint: false,
       render: () => `
         <div class="doc-pdf-container">
-          <iframe
+          <object
+            data="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf"
+            type="application/pdf"
             class="doc-pdf-iframe"
-            src="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf#toolbar=1&navpanes=0"
-            title="Công văn Hướng dẫn Đề xuất đề tài KHCN cấp cơ sở 2027"
-          ></iframe>
+          >
+            <iframe
+              class="doc-pdf-iframe"
+              src="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf#toolbar=1&navpanes=0"
+              title="Công văn Hướng dẫn Đề xuất đề tài KHCN cấp cơ sở 2027"
+            >
+              <p>Trình duyệt không hỗ trợ hiển thị trực tiếp. <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" target="_blank" rel="noopener">Mở xem PDF trong tab mới</a>.</p>
+            </iframe>
+          </object>
           <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; background: #ffffff; padding: 12px 18px; border-radius: 8px; border: 1px solid #cbd5e1; flex-wrap: wrap; gap: 10px;">
             <span style="font-size: 0.88rem; color: #64748b;">
               <i class="fa-solid fa-circle-info text-teal"></i> Nếu trình duyệt của bạn không hỗ trợ hiển thị PDF trực tiếp, hãy bấm nút bên cạnh:
             </span>
-            <div style="display: flex; gap: 8px;">
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
               <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Trong Tab Mới
               </a>
               <a href="THU_VIEN/CV%20HD%20%C4%90X%20%C4%91%E1%BB%81%20t%C3%A0i%20KHCN%20c%E1%BA%A5p%20c%C6%A1%20s%E1%BB%9F%202027.pdf" download="CV_HD_DX_de_tai_KHCN_cap_co_so_2027.pdf" class="btn btn-primary btn-sm">
                 <i class="fa-solid fa-download"></i> Tải File PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      `
+    },
+
+    'tb90-khcn-2027': {
+      title: 'THÔNG BÁO: V/v đề xuất và tuyển chọn nhiệm vụ KH&CN cấp cơ sở năm 2027',
+      badge: '<i class="fa-solid fa-file-pdf"></i> Thông Báo Số 90 .PDF',
+      sub: 'Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang • Kế hoạch đề xuất & tuyển chọn',
+      downloadUrl: 'THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf',
+      downloadName: 'TB90. đx KHCN cơ sở 2027-DTG.pdf',
+      canPrint: false,
+      render: () => `
+        <div class="doc-pdf-container">
+          <object
+            data="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf"
+            type="application/pdf"
+            class="doc-pdf-iframe"
+          >
+            <iframe
+              class="doc-pdf-iframe"
+              src="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf#toolbar=1&navpanes=0"
+              title="THÔNG BÁO V/v đề xuất và tuyển chọn nhiệm vụ khoa học và công nghệ cấp cơ sở năm 2027"
+            >
+              <p>Trình duyệt không hỗ trợ xem trực tiếp trong khung. <a href="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf" target="_blank" rel="noopener">Bấm vào đây để mở toàn màn hình PDF gốc</a>.</p>
+            </iframe>
+          </object>
+          <div style="margin-top: 12px; display: flex; align-items: center; justify-content: space-between; background: #ffffff; padding: 12px 18px; border-radius: 8px; border: 1px solid #cbd5e1; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 0.88rem; color: #64748b;">
+              <i class="fa-solid fa-circle-info text-teal"></i> Đang hiển thị tệp PDF gốc: <strong>TB90. đx KHCN cơ sở 2027-DTG.pdf</strong>
+            </span>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Trong Tab Mới
+              </a>
+              <a href="THU_VIEN/TB90_dx_KHCN_co_so_2027_DTG.pdf" download="TB90. đx KHCN cơ sở 2027-DTG.pdf" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-download"></i> Tải File PDF Gốc
               </a>
             </div>
           </div>

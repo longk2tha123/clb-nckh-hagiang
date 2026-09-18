@@ -1503,6 +1503,20 @@ ul, ol {
   border: 1px solid rgba(220, 38, 38, 0.2);
 }
 
+.pulse-badge.is-closed {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.pulse-badge.is-closed .closed-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #64748b;
+  display: inline-block;
+}
+
 .pulse-dot {
   width: 8px;
   height: 8px;
@@ -1778,8 +1792,8 @@ ul, ol {
   top: 24px;
   left: 30px;
   right: 30px;
-  height: 2px;
-  background: #e2e8f0;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent-teal) 0%, var(--accent-teal) 50%, #e2e8f0 50%, #e2e8f0 100%);
   z-index: 1;
 }
 
@@ -1807,11 +1821,22 @@ ul, ol {
   transition: all var(--transition-fast);
 }
 
+.timeline-step.is-completed .step-marker,
 .timeline-step.is-active .step-marker {
   background: var(--accent-teal);
   border-color: var(--accent-teal);
   color: #ffffff;
   box-shadow: 0 0 0 6px var(--accent-teal-light);
+}
+
+.timeline-step.is-completed .step-marker {
+  box-shadow: 0 0 0 4px var(--accent-teal-light);
+}
+
+.timeline-step.is-active .step-date {
+  background: var(--accent-teal);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 168, 150, 0.25);
 }
 
 .step-date {
@@ -1838,6 +1863,464 @@ ul, ol {
   color: var(--text-muted);
   line-height: 1.55;
   margin: 0;
+}
+
+/* ==========================================================================
+   ADMISSION RESULTS SECTION (DANH SÁCH TRÚNG TUYỂN)
+   ========================================================================== */
+.admission-results-section {
+  padding: 36px 32px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.admission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.admission-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.admission-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-900);
+  margin: 10px 0 4px;
+}
+
+.admission-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.admission-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Quick KPI / Stat Cards */
+.admission-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.admission-stat-card {
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.admission-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.admission-stat-card .stat-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.stat-icon-wrap.stat-green { background: #ecfdf5; color: #059669; }
+.stat-icon-wrap.stat-blue { background: #eff6ff; color: #2563eb; }
+.stat-icon-wrap.stat-amber { background: #fffbeb; color: #d97706; }
+.stat-icon-wrap.stat-purple { background: #faf5ff; color: #9333ea; }
+
+.admission-stat-card .stat-number {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary-900);
+  line-height: 1.1;
+  display: block;
+}
+
+.admission-stat-card .stat-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 3px;
+}
+
+/* Admission Filter & Search Toolbar */
+.admission-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.admission-search-box {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  max-width: 420px;
+}
+
+.admission-search-box input {
+  width: 100%;
+  height: 42px;
+  padding: 0 38px 0 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid #cbd5e1;
+  font-size: 0.88rem;
+  background: #ffffff;
+  color: var(--text-dark);
+  transition: all var(--transition-fast);
+}
+
+.admission-search-box input:focus {
+  outline: none;
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 3px var(--accent-teal-light);
+}
+
+.admission-search-box .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.admission-search-box .search-clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.admission-search-box .search-clear-btn:hover {
+  color: #ef4444;
+}
+
+.admission-filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 7px 16px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+}
+
+.filter-chip:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-700);
+}
+
+.filter-chip.active {
+  background: var(--primary-900);
+  border-color: var(--primary-900);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(11, 37, 69, 0.2);
+}
+
+.filter-chip .chip-count {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.filter-chip.active .chip-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Table Container & UI */
+.admission-table-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.admission-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.89rem;
+}
+
+.admission-table thead th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.admission-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color var(--transition-fast);
+}
+
+.admission-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.admission-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admission-table tbody td {
+  padding: 13px 18px;
+  vertical-align: middle;
+  color: #1e293b;
+}
+
+/* Col STT */
+.admission-table .col-stt-cell {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #64748b;
+  text-align: center;
+  width: 50px;
+}
+
+/* Member Name & Profile Cell */
+.member-profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.member-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #ffffff;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.member-name {
+  font-weight: 700;
+  color: var(--primary-900);
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.member-dob {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  color: #475569;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.badge-gender {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: #fdf2f8;
+  color: #db2777;
+  border: 1px solid #fbcfe8;
+}
+
+.badge-class {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.badge-faculty-sp {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-faculty-ln {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.member-major-text {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.84rem;
+}
+
+.badge-status-passed {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+  white-space: nowrap;
+}
+
+/* Empty State */
+.admission-empty-state {
+  padding: 44px 20px;
+  text-align: center;
+}
+
+.admission-empty-state .empty-icon {
+  font-size: 2.5rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.admission-empty-state h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  margin-bottom: 6px;
+}
+
+.admission-empty-state p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 440px;
+  margin: 0 auto 16px;
+}
+
+/* Footer note */
+.admission-table-footer {
+  padding: 14px 20px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.84rem;
+}
+
+.table-footer-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  max-width: 750px;
+}
+
+.table-footer-counter {
+  font-size: 0.82rem;
+}
+
+/* Button style for admission actions */
+.btn-primary-teal {
+  background: var(--accent-teal);
+  color: #ffffff;
+  border: 1px solid var(--accent-teal);
+  box-shadow: 0 2px 6px rgba(0, 168, 150, 0.25);
+}
+
+.btn-primary-teal:hover {
+  background: var(--accent-teal-dark);
+  color: #ffffff;
+  border-color: var(--accent-teal-dark);
 }
 
 /* Recruitment CTA & Gratitude Banner */
@@ -3275,9 +3758,39 @@ html, body {
     flex-shrink: 0;
   }
 
-  .spotlight-header, .spotlight-content, .recruitment-growth-section, .recruitment-timeline-box, .recruitment-cta-card {
+  .spotlight-header, .spotlight-content, .recruitment-growth-section, .recruitment-timeline-box, .recruitment-cta-card, .admission-results-section {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .admission-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .admission-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .admission-header-actions {
+    width: 100%;
+  }
+
+  .admission-header-actions .btn {
+    flex: 1;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .admission-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admission-search-box {
+    max-width: 100%;
   }
 
   .cta-card-content {

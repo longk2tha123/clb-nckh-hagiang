@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDevFeatureModals();
   initWelcomeModal();
   initDocPreviewer();
+  initAdmissionList();
 });
 
 /* --------------------------------------------------------------------------
@@ -986,6 +987,157 @@ function initDocPreviewer() {
           </div>
         </div>
       `
+    },
+    'danh-sach-trung-tuyen': {
+      title: 'Danh Sách Trúng Tuyển Thành Viên CLB SRC Năm Học 2026 – 2027',
+      badge: '<i class="fa-solid fa-file-word"></i> Quyết Định Chính Thức',
+      sub: 'Phân hiệu Đại học Thái Nguyên tại Hà Giang • Công Bố 19/09/2026',
+      downloadUrl: 'HOAT_DONG/DANH SÁCH TRÚNG TUYỂN CLB NCKH NĂM 2026 - 2027.docx',
+      downloadName: 'DANH_SACH_TRUNG_TUYEN_CLB_NCKH_2026_2027.docx',
+      canPrint: true,
+      render: () => `
+        <div class="doc-paper">
+          <div class="doc-paper-header">
+            <div class="doc-header-left">
+              <h5>PHÂN HIỆU ĐHTN TẠI HÀ GIANG</h5>
+              <p><strong>CLB NGHIÊN CỨU KHOA HỌC (SRC)</strong></p>
+              <p style="font-size: 0.84rem; color: #475569;">Số: 02/TB-SRC</p>
+              <div class="doc-header-divider"></div>
+            </div>
+            <div class="doc-header-right">
+              <h5>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h5>
+              <p><strong>Độc lập - Tự do - Hạnh phúc</strong></p>
+              <p style="font-size: 0.84rem; font-style: italic; color: #475569;">Hà Giang, ngày 19 tháng 09 năm 2026</p>
+              <div class="doc-header-divider"></div>
+            </div>
+          </div>
+
+          <div class="doc-main-title" style="margin-top: 16px;">
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">DANH SÁCH TRÚNG TUYỂN THÀNH VIÊN</h2>
+            <p style="font-size: 0.95rem; font-weight: 700; color: #028090;">CÂU LẠC BỘ NGHIÊN CỨU KHOA HỌC (SRC) NĂM HỌC 2026 – 2027</p>
+            <p style="font-size: 0.84rem; font-style: italic; color: #64748b;">(Kèm theo Thông báo xét tuyển thành viên đợt 1 năm học 2026 – 2027)</p>
+          </div>
+
+          <div class="doc-table-wrap" style="overflow-x: auto; margin-top: 20px;">
+            <table class="doc-table" style="width: 100%; border-collapse: collapse; font-size: 0.86rem;">
+              <thead>
+                <tr style="background: #f8fafc;">
+                  <th style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; width: 45px;">STT</th>
+                  <th style="border: 1px solid #cbd5e1; padding: 8px;">Họ và tên</th>
+                  <th style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Ngày sinh</th>
+                  <th style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Giới tính</th>
+                  <th style="border: 1px solid #cbd5e1; padding: 8px;">Lớp</th>
+                  <th style="border: 1px solid #cbd5e1; padding: 8px;">Khoa</th>
+                  <th style="border: 1px solid #cbd5e1; padding: 8px;">Ngành</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">1</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">ĐẶNG HUYỀN TRANG</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">3/1/2007</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K4 – GDTH A</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">GIÁO DỤC TIỂU HỌC</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">2</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">HÀ HUYỀN DUNG</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">23/4/2008</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K4 – GDTH C</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">GIÁO DỤC TIỂU HỌC</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">3</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">MƯƠNG BÍCH TUỆ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">20/8/2007</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K3 – SPTM</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">SƯ PHẠM TIẾNG MÔNG</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">4</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">LƯƠNG THU HÀ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">19/8/2007</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K3 – QTDVDL&LH</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Liên ngành</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">QTDVDL&LH</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">5</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">VƯƠNG THỊ LUYẾN</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">18/3/2007</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K3 – DU LỊCH</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Liên ngành</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">DU LỊCH</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">6</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">SÙNG THỊ MAI</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">4/1/2007</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K4 – GDTH B</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">GIÁO DỤC TIỂU HỌC</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">7</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">BÀN PHI YẾN</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">5/2/2008</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K4 – GDTH A</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">GIÁO DỤC TIỂU HỌC</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">8</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">HOÀNG NGUYỄN QUỲNH ANH</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">10/7/2008</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K4 – GDTH A</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">GIÁO DỤC TIỂU HỌC</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">9</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">HOÀNG THỊ PHƯƠNG</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">13/12/2008</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K4 – GDTH A</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">GIÁO DỤC TIỂU HỌC</td>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">10</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; font-weight: 700;">BẾ THỊ HÀ MY</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center; font-family: var(--font-mono);">19/11/2008</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Nữ</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">K4 – GDTH A</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">Sư phạm</td>
+                  <td style="border: 1px solid #cbd5e1; padding: 8px;">GIÁO DỤC TIỂU HỌC</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="margin-top: 25px; display: flex; justify-content: space-between; text-align: center;">
+            <div style="width: 45%;">
+              <p style="font-weight: 700; margin-bottom: 50px;">TM. BAN CỐ VẤN CLB</p>
+              <p style="font-style: italic; color: #64748b;">(Đã ký)</p>
+            </div>
+            <div style="width: 45%;">
+              <p style="font-weight: 700; margin-bottom: 50px;">TM. BAN CHỦ NHIỆM CLB<br><span style="font-size: 0.85rem; font-weight: normal;">Chủ nhiệm</span></p>
+              <p style="font-style: italic; color: #64748b;">(Đã ký)</p>
+            </div>
+          </div>
+        </div>
+      `
     }
   };
 
@@ -1012,4 +1164,106 @@ function initDocPreviewer() {
     modalBody.innerHTML = doc.render();
     openModal();
   });
+}
+
+/* --------------------------------------------------------------------------
+   ADMISSION RESULTS INTERACTIVITY (SEARCH & FILTER)
+   -------------------------------------------------------------------------- */
+function initAdmissionList() {
+  const searchInput = document.getElementById('admissionSearchInput');
+  const clearBtn = document.getElementById('clearAdmissionSearch');
+  const filterChips = document.querySelectorAll('#admissionFilterPills .filter-chip');
+  const rows = document.querySelectorAll('#admissionTableBody tr');
+  const emptyState = document.getElementById('admissionEmptyState');
+  const countEl = document.getElementById('admissionVisibleCount');
+  const resetBtn = document.getElementById('resetAdmissionFilterBtn');
+
+  if (!rows.length) return;
+
+  let currentFaculty = 'all';
+  let currentKeyword = '';
+
+  function normalize(str) {
+    return (str || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd')
+      .trim();
+  }
+
+  function applyFilters() {
+    let visibleCount = 0;
+    const normKeyword = normalize(currentKeyword);
+
+    rows.forEach(row => {
+      const rowFaculty = row.getAttribute('data-faculty') || '';
+      const rowSearch = normalize(row.getAttribute('data-search') || '');
+
+      const matchesFaculty = (currentFaculty === 'all' || rowFaculty === currentFaculty);
+      const matchesKeyword = !normKeyword || rowSearch.includes(normKeyword);
+
+      if (matchesFaculty && matchesKeyword) {
+        row.style.display = '';
+        visibleCount++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    if (countEl) countEl.textContent = visibleCount;
+
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.style.display = 'block';
+      } else {
+        emptyState.style.display = 'none';
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentKeyword = e.target.value;
+      if (clearBtn) {
+        clearBtn.style.display = currentKeyword.trim() ? 'flex' : 'none';
+      }
+      applyFilters();
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      currentKeyword = '';
+      clearBtn.style.display = 'none';
+      applyFilters();
+    });
+  }
+
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentFaculty = chip.getAttribute('data-faculty') || 'all';
+      applyFilters();
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      currentFaculty = 'all';
+      currentKeyword = '';
+      if (searchInput) searchInput.value = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+      filterChips.forEach(c => {
+        if (c.getAttribute('data-faculty') === 'all') c.classList.add('active');
+        else c.classList.remove('active');
+      });
+      applyFilters();
+    });
+  }
 }

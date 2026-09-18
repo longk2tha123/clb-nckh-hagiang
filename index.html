@@ -678,8 +678,8 @@
         <!-- Top Status Bar -->
         <div class="spotlight-header">
           <div class="spotlight-tag-group">
-            <span class="pulse-badge">
-              <span class="pulse-dot"></span> Đang Tuyển Thành Viên
+            <span class="pulse-badge is-closed">
+              <span class="closed-dot"></span> Kết thúc
             </span>
             <span class="spotlight-academic-tag">
               <i class="fa-solid fa-graduation-cap"></i> Năm học 2026 – 2027
@@ -744,7 +744,7 @@
             <div>
               <span class="bento-label">TB trúng tuyển thành viên</span>
               <h4 class="bento-val"><span class="tabular-nums font-mono">19 – 20/09/2026</span></h4>
-              <p class="bento-sub">Dự kiến thông báo danh sách thành viên chính thức trên Fanpage CLB.</p>
+              <p class="bento-sub">Đã có danh sách trúng tuyển thành viên chính thức được công bố chi tiết bên dưới.</p>
             </div>
           </div>
         </div>
@@ -797,7 +797,7 @@
             <i class="fa-solid fa-timeline text-gold"></i> Quy Trình & Lịch Trình Tuyển Thành Viên
           </h4>
           <div class="recruitment-timeline-steps">
-            <div class="timeline-step is-active">
+            <div class="timeline-step is-completed">
               <div class="step-marker">
                 <i class="fa-solid fa-file-signature"></i>
               </div>
@@ -808,12 +808,12 @@
               </div>
             </div>
 
-            <div class="timeline-step">
+            <div class="timeline-step is-active">
               <div class="step-marker">
                 <i class="fa-solid fa-bullhorn"></i>
               </div>
               <div>
-                <span class="step-date font-mono tabular-nums">Dự kiến ngày 19, 20/09/2026</span>
+                <span class="step-date font-mono tabular-nums">Đã có danh sách trúng tuyển</span>
                 <h5 class="step-title">TB trúng tuyển thành viên trên Page</h5>
                 <p class="step-text">Danh sách trúng tuyển sẽ được công bố chính thức trên Fanpage CLB và gửi tin nhắn chúc mừng tới tân thành viên.</p>
               </div>
@@ -832,6 +832,330 @@
           </div>
         </div>
 
+        <!-- ==================== DANH SÁCH TRÚNG TUYỂN THÀNH VIÊN ==================== -->
+        <div class="admission-results-section" id="danhsachtrungtuyen">
+          <!-- Section Header -->
+          <div class="admission-header">
+            <div>
+              <span class="admission-pill-tag">
+                <i class="fa-solid fa-circle-check"></i> Đã công bố chính thức • 19/09/2026
+              </span>
+              <h4 class="admission-title">Danh Sách Trúng Tuyển Thành Viên CLB NCKH (SRC)</h4>
+              <p class="admission-subtitle">
+                Năm học 2026 – 2027 • Phân hiệu Đại học Thái Nguyên tại tỉnh Hà Giang
+              </p>
+            </div>
+            <div class="admission-header-actions">
+              <a href="HOAT_DONG/DANH SÁCH TRÚNG TUYỂN CLB NCKH NĂM 2026 - 2027.docx" download="DANH_SACH_TRUNG_TUYEN_CLB_NCKH_2026_2027.docx" class="btn btn-primary-teal btn-sm">
+                <i class="fa-solid fa-file-word"></i> Tải File Gốc (.DOCX)
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm preview-doc-btn" data-doc="danh-sach-trung-tuyen">
+                <i class="fa-solid fa-eye"></i> Xem Trước Bản In
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick KPI Cards -->
+          <div class="admission-stats-grid">
+            <div class="admission-stat-card">
+              <div class="stat-icon-wrap stat-green">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <div>
+                <span class="stat-number tabular-nums font-mono">10</span>
+                <span class="stat-name">Tân thành viên trúng tuyển</span>
+              </div>
+            </div>
+
+            <div class="admission-stat-card">
+              <div class="stat-icon-wrap stat-blue">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div>
+                <span class="stat-number tabular-nums font-mono">02</span>
+                <span class="stat-name">Khoa đào tạo đại học</span>
+              </div>
+            </div>
+
+            <div class="admission-stat-card">
+              <div class="stat-icon-wrap stat-amber">
+                <i class="fa-solid fa-book-bookmark"></i>
+              </div>
+              <div>
+                <span class="stat-number tabular-nums font-mono">03</span>
+                <span class="stat-name">Ngành đào tạo chuyên môn</span>
+              </div>
+            </div>
+
+            <div class="admission-stat-card">
+              <div class="stat-icon-wrap stat-purple">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <span class="stat-number tabular-nums font-mono">100%</span>
+                <span class="stat-name">Đạt tiêu chuẩn xét duyệt</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toolbar: Search & Filter -->
+          <div class="admission-toolbar">
+            <div class="admission-search-box">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="admissionSearchInput" placeholder="Tìm kiếm theo họ tên, lớp, khoa, ngành..." autocomplete="off">
+              <button type="button" id="clearAdmissionSearch" class="search-clear-btn" style="display: none;" title="Xóa tìm kiếm">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <div class="admission-filter-pills" id="admissionFilterPills">
+              <button type="button" class="filter-chip active" data-faculty="all">
+                Tất cả <span class="chip-count tabular-nums font-mono">10</span>
+              </button>
+              <button type="button" class="filter-chip" data-faculty="Sư phạm">
+                Khoa Sư phạm <span class="chip-count tabular-nums font-mono">8</span>
+              </button>
+              <button type="button" class="filter-chip" data-faculty="Liên ngành">
+                Khoa Liên ngành <span class="chip-count tabular-nums font-mono">2</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Wrapper -->
+          <div class="admission-table-card">
+            <div class="table-responsive">
+              <table class="admission-table" id="admissionTable">
+                <thead>
+                  <tr>
+                    <th class="col-stt-cell" style="width: 55px;">STT</th>
+                    <th>Họ và Tên</th>
+                    <th style="text-align: center;">Ngày Sinh</th>
+                    <th style="text-align: center;">Giới Tính</th>
+                    <th>Lớp</th>
+                    <th>Khoa</th>
+                    <th>Ngành</th>
+                    <th style="text-align: center;">Trạng Thái</th>
+                  </tr>
+                </thead>
+                <tbody id="admissionTableBody">
+                  <tr data-faculty="Sư phạm" data-search="đặng huyền trang 3/1/2007 k4 gdth a sư phạm giáo dục tiểu học">
+                    <td class="col-stt-cell tabular-nums font-mono">01</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #028090 0%, #00a896 100%);">HT</div>
+                        <div>
+                          <span class="member-name">ĐẶNG HUYỀN TRANG</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">03/01/2007</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K4 – GDTH A</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">GIÁO DỤC TIỂU HỌC</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Sư phạm" data-search="hà huyền dung 23/4/2008 k4 gdth c sư phạm giáo dục tiểu học">
+                    <td class="col-stt-cell tabular-nums font-mono">02</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);">HD</div>
+                        <div>
+                          <span class="member-name">HÀ HUYỀN DUNG</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">23/04/2008</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K4 – GDTH C</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">GIÁO DỤC TIỂU HỌC</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Sư phạm" data-search="mương bích tuệ 20/8/2007 k3 sptm sư phạm sư phạm tiếng mông">
+                    <td class="col-stt-cell tabular-nums font-mono">03</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);">BT</div>
+                        <div>
+                          <span class="member-name">MƯƠNG BÍCH TUỆ</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">20/08/2007</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K3 – SPTM</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">SƯ PHẠM TIẾNG MÔNG</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Liên ngành" data-search="lương thu hà 19/8/2007 k3 qtdvdl lh liên ngành qtdvdl lh quản trị dịch vụ du lịch lữ hành">
+                    <td class="col-stt-cell tabular-nums font-mono">04</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">TH</div>
+                        <div>
+                          <span class="member-name">LƯƠNG THU HÀ</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">19/08/2007</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K3 – QTDVDL&LH</span></td>
+                    <td><span class="badge-faculty-ln"><i class="fa-solid fa-layer-group"></i> Liên ngành</span></td>
+                    <td><span class="member-major-text">QTDVDL&LH</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Liên ngành" data-search="vương thị luyến 18/3/2007 k3 du lịch liên ngành du lịch">
+                    <td class="col-stt-cell tabular-nums font-mono">05</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #db2777 0%, #ec4899 100%);">TL</div>
+                        <div>
+                          <span class="member-name">VƯƠNG THỊ LUYẾN</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">18/03/2007</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K3 – DU LỊCH</span></td>
+                    <td><span class="badge-faculty-ln"><i class="fa-solid fa-layer-group"></i> Liên ngành</span></td>
+                    <td><span class="member-major-text">DU LỊCH</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Sư phạm" data-search="sùng thị mai 4/1/2007 k4 gdth b sư phạm giáo dục tiểu học">
+                    <td class="col-stt-cell tabular-nums font-mono">06</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);">TM</div>
+                        <div>
+                          <span class="member-name">SÙNG THỊ MAI</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">04/01/2007</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K4 – GDTH B</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">GIÁO DỤC TIỂU HỌC</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Sư phạm" data-search="bàn phi yến 5/2/2008 k4 gdth a sư phạm giáo dục tiểu học">
+                    <td class="col-stt-cell tabular-nums font-mono">07</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">PY</div>
+                        <div>
+                          <span class="member-name">BÀN PHI YẾN</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">05/02/2008</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K4 – GDTH A</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">GIÁO DỤC TIỂU HỌC</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Sư phạm" data-search="hoàng nguyễn quỳnh anh 10/7/2008 k4 gdth a sư phạm giáo dục tiểu học">
+                    <td class="col-stt-cell tabular-nums font-mono">08</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);">QA</div>
+                        <div>
+                          <span class="member-name">HOÀNG NGUYỄN QUỲNH ANH</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">10/07/2008</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K4 – GDTH A</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">GIÁO DỤC TIỂU HỌC</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Sư phạm" data-search="hoàng thị phương 13/12/2008 k4 gdth a sư phạm giáo dục tiểu học">
+                    <td class="col-stt-cell tabular-nums font-mono">09</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #c026d3 0%, #e879f9 100%);">TP</div>
+                        <div>
+                          <span class="member-name">HOÀNG THỊ PHƯƠNG</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">13/12/2008</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K4 – GDTH A</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">GIÁO DỤC TIỂU HỌC</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+
+                  <tr data-faculty="Sư phạm" data-search="bế thị hà my 19/11/2008 k4 gdth a sư phạm giáo dục tiểu học">
+                    <td class="col-stt-cell tabular-nums font-mono">10</td>
+                    <td>
+                      <div class="member-profile-cell">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);">HM</div>
+                        <div>
+                          <span class="member-name">BẾ THỊ HÀ MY</span>
+                          <span style="font-size: 0.78rem; color: #64748b;">Tân thành viên</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="member-dob tabular-nums font-mono">19/11/2008</td>
+                    <td style="text-align: center;"><span class="badge-gender"><i class="fa-solid fa-venus"></i> Nữ</span></td>
+                    <td><span class="badge-class font-mono">K4 – GDTH A</span></td>
+                    <td><span class="badge-faculty-sp"><i class="fa-solid fa-graduation-cap"></i> Sư phạm</span></td>
+                    <td><span class="member-major-text">GIÁO DỤC TIỂU HỌC</span></td>
+                    <td style="text-align: center;"><span class="badge-status-passed"><i class="fa-solid fa-circle-check"></i> Trúng tuyển</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Empty State -->
+            <div class="admission-empty-state" id="admissionEmptyState" style="display: none;">
+              <div class="empty-icon"><i class="fa-solid fa-user-slash"></i></div>
+              <h5>Không tìm thấy kết quả phù hợp</h5>
+              <p>Vui lòng thử tìm kiếm bằng từ khóa khác hoặc xóa bộ lọc để hiển thị danh sách tân thành viên.</p>
+              <button type="button" class="btn btn-secondary btn-sm" id="resetAdmissionFilterBtn">
+                <i class="fa-solid fa-rotate-left"></i> Xem toàn bộ 10 tân thành viên
+              </button>
+            </div>
+
+            <!-- Table Footer Notice -->
+            <div class="admission-table-footer">
+              <div class="table-footer-note">
+                <i class="fa-solid fa-circle-info text-teal" style="font-size: 1.05rem;"></i>
+                <span>
+                  <strong>Hướng dẫn tân thành viên:</strong> Chúc mừng 10 bạn đã xuất sắc trúng tuyển! Hãy tham gia nhóm Zalo CLB và chuẩn bị tham dự buổi <em>Gặp mặt & Sinh hoạt định hướng</em> vào cuối tháng 09/2026.
+                </span>
+              </div>
+              <div class="table-footer-counter font-mono tabular-nums text-muted">
+                Hiển thị <span id="admissionVisibleCount" style="font-weight: 800; color: var(--primary-900);">10</span> / 10 tân thành viên
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Gratitude & CTA Banner -->
         <div class="recruitment-cta-card">
           <div class="cta-card-content">
@@ -841,18 +1165,18 @@
               </div>
               <h4 class="cta-thanks-text">Cảm ơn các bạn đã quan tâm CLB.</h4>
               <p class="cta-sub">
-                Đừng ngần ngại tải ngay mẫu đơn gia nhập bên cạnh hoặc kết nối qua Zalo nếu bạn có bất kỳ câu hỏi nào về đợt tuyển quân lần này!
+                Chào mừng các tân thành viên gia nhập gia đình SRC! Các bạn có thể tải bản danh sách trúng tuyển chính thức hoặc kết nối qua nhóm Zalo nội bộ để nhận lịch sinh hoạt đầu năm.
               </p>
             </div>
             <div class="cta-buttons-group">
-              <button type="button" class="btn btn-secondary preview-doc-btn" data-doc="don-gia-nhap" style="border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.15); color: #ffffff;">
-                <i class="fa-solid fa-eye"></i> Xem Trước Mẫu Đơn
-              </button>
-              <a href="MAU_DON_XIN_GIA_NHAP_CLB/MAU_DON_XIN_GIA_NHAP_CLB_SRC_FINAL.docx" download="Don_xin_gia_nhap_CLB_SRC.docx" class="btn btn-recruit-primary">
-                <i class="fa-solid fa-file-word"></i> Tải Mẫu Đơn (.DOCX)
+              <a href="HOAT_DONG/DANH SÁCH TRÚNG TUYỂN CLB NCKH NĂM 2026 - 2027.docx" download="DANH_SACH_TRUNG_TUYEN_CLB_NCKH_2026_2027.docx" class="btn btn-recruit-primary">
+                <i class="fa-solid fa-file-word"></i> Tải DS Trúng Tuyển (.DOCX)
               </a>
+              <button type="button" class="btn btn-secondary preview-doc-btn" data-doc="danh-sach-trung-tuyen" style="border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.15); color: #ffffff;">
+                <i class="fa-solid fa-eye"></i> Xem Trước Bản In
+              </button>
               <a href="https://zalo.me/g/hikfix960" target="_blank" rel="noopener noreferrer" class="btn btn-recruit-secondary">
-                <i class="fa-solid fa-comments"></i> Hỗ Trợ Zalo Tuyển Sinh
+                <i class="fa-solid fa-comments"></i> Nhóm Zalo Tân Thành Viên
               </a>
               <a href="javascript:void(0)" class="btn btn-recruit-ghost dev-trigger" data-feature="Fanpage CLB NCKH">
                 <i class="fa-brands fa-facebook"></i> Fanpage CLB
@@ -885,22 +1209,22 @@
           <!-- Event 1 -->
           <article class="event-card" data-category="recruitment">
             <div class="event-banner" style="background: linear-gradient(135deg, #0b2545 0%, #1d5b96 100%);">
-              <span class="event-banner-tag" style="color: #dc2626; background: #fff5f5;">Đang diễn ra</span>
-              <i class="fa-solid fa-user-plus"></i>
+              <span class="event-banner-tag" style="color: #475569; background: #f1f5f9;">Kết thúc</span>
+              <i class="fa-solid fa-user-check"></i>
             </div>
             <div class="event-body">
               <div class="event-meta">
-                <span><i class="fa-regular fa-calendar"></i> 15/09 - 18/09/2026</span>
-                <span><i class="fa-solid fa-users"></i> 40-50 chỉ tiêu</span>
+                <span><i class="fa-regular fa-calendar"></i> 15/09 - 19/09/2026</span>
+                <span><i class="fa-solid fa-users"></i> 10 tân thành viên</span>
               </div>
               <h4 class="event-title">Tuyển thành viên mới CLB SRC năm học 2026 – 2027</h4>
               <p class="event-desc">
-                Cơ hội phát triển kỹ năng NCKH, làm việc nhóm, thuyết trình và tham gia các hoạt động học thuật hấp dẫn cùng CLB.
+                Đã hoàn tất xét duyệt đơn đăng ký và công bố danh sách 10 tân thành viên chính thức gia nhập CLB NCKH.
               </p>
               <div class="event-footer">
-                <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent-teal);"><i class="fa-solid fa-tag"></i> Tuyển quân</span>
-                <a href="#hoatdong" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.82rem;">
-                  Xem chi tiết <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent-teal);"><i class="fa-solid fa-tag"></i> Đã có kết quả</span>
+                <a href="#danhsachtrungtuyen" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.82rem;">
+                  Xem DS trúng tuyển <i class="fa-solid fa-arrow-down"></i>
                 </a>
               </div>
             </div>

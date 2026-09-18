@@ -2533,7 +2533,7 @@ ul, ol {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  padding: 24px;
+  padding: 24px 18px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-normal);
   display: flex;
@@ -2580,7 +2580,25 @@ ul, ol {
 .resource-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  width: 100%;
+}
+
+.resource-actions .btn {
+  flex: 1 1 0%;
+  min-width: 0;
+  padding: 8px 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 5px;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 9999px;
+}
+
+.resource-actions .btn i {
+  font-size: 0.8rem;
+  flex-shrink: 0;
 }
 
 /* -----------------------------

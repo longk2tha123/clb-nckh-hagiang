@@ -1053,6 +1053,14 @@ function initDocPreviewer() {
               </a>
             </div>
           </div>
+          <div class="docx-zoom-bar" id="docxZoomBar" style="display: none;">
+            <button type="button" class="docx-zoom-btn active" id="btnDocxFitA4">
+              <i class="fa-solid fa-expand"></i> Vừa Trang A4
+            </button>
+            <button type="button" class="docx-zoom-btn" id="btnDocxZoom100">
+              <i class="fa-solid fa-magnifying-glass-plus"></i> 100% Gốc
+            </button>
+          </div>
           <div class="docx-preview-loading" id="docxLoading">
             <i class="fa-solid fa-spinner fa-spin text-teal" style="font-size: 2.2rem; margin-bottom: 14px;"></i>
             <h4 style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Đang tải và kết xuất bản Word gốc...</h4>
@@ -1080,6 +1088,7 @@ function initDocPreviewer() {
             }).then(() => {
               if (loadingEl) loadingEl.style.display = 'none';
               container.style.display = 'block';
+              initDocxZoom(container);
             }).catch(err => {
               console.error('Docx render error:', err);
               if (loadingEl) {
@@ -1116,6 +1125,44 @@ function initDocPreviewer() {
       openModal();
     }
   });
+
+  function initDocxZoom(container) {
+    const wrapper = container.querySelector('.docx-wrapper');
+    if (!wrapper) return;
+    const zoomBar = document.getElementById('docxZoomBar');
+    const btnFit = document.getElementById('btnDocxFitA4');
+    const btn100 = document.getElementById('btnDocxZoom100');
+
+    if (zoomBar) zoomBar.style.display = 'inline-flex';
+
+    function calcFit() {
+      const screenW = container.clientWidth || window.innerWidth;
+      const availW = Math.max(screenW - 16, 260);
+      return parseFloat(Math.min(1, Math.max(0.28, availW / 816)).toFixed(2));
+    }
+
+    function applyZoom(scale, isFit) {
+      wrapper.style.zoom = scale;
+      if (btnFit && btn100) {
+        btnFit.classList.toggle('active', isFit);
+        btn100.classList.toggle('active', !isFit);
+      }
+    }
+
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      applyZoom(calcFit(), true);
+    } else {
+      applyZoom(1, false);
+    }
+
+    if (btnFit) {
+      btnFit.onclick = () => applyZoom(calcFit(), true);
+    }
+    if (btn100) {
+      btn100.onclick = () => applyZoom(1, false);
+    }
+  }
 }
 
 /* --------------------------------------------------------------------------

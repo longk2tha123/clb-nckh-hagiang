@@ -4287,17 +4287,65 @@ html, body {
   box-shadow: var(--shadow-sm);
   overflow-x: auto;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 .docx-viewer-container .docx-wrapper {
   background: #525659 !important;
-  padding: 24px 16px !important;
+  padding: 20px 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  transition: zoom 0.15s ease;
 }
 
 .docx-viewer-container .docx {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
   margin: 0 auto 28px !important;
   background: #ffffff !important;
+}
+
+/* Floating Zoom Toolbar */
+.docx-zoom-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  margin-bottom: 12px;
+  align-self: center;
+}
+
+.docx-zoom-btn {
+  background: transparent;
+  color: #cbd5e1;
+  border: none;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  min-height: 36px;
+}
+
+.docx-zoom-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.docx-zoom-btn.active {
+  background: var(--teal, #028090);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(2, 128, 144, 0.4);
 }
 
 /* Administrative Document Paper View */
@@ -4633,34 +4681,23 @@ html, body {
     justify-content: center !important;
   }
 
-  /* Docx Mobile Fit */
+  /* Docx Mobile Presentation */
+  .docx-viewer-container {
+    min-height: 520px;
+  }
+
   .docx-viewer-container .docx-wrapper {
-    padding: 10px 4px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+    padding: 12px 4px !important;
   }
 
-  .docx-viewer-container .docx {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    min-height: auto !important;
-    padding: 24px 14px !important;
-    margin: 0 0 16px 0 !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  .docx-zoom-bar {
+    margin-bottom: 10px;
+    padding: 4px 8px;
   }
 
-  .docx-viewer-container .docx p,
-  .docx-viewer-container .docx span {
-    word-break: break-word !important;
-  }
-
-  .docx-viewer-container .docx table {
-    max-width: 100% !important;
-    display: block !important;
-    overflow-x: auto !important;
+  .docx-zoom-btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
   }
 
   .doc-paper {
